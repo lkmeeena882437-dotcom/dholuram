@@ -19,9 +19,13 @@ var CONFIG = {
 
   profileImageUrl: "",                                    // 🖼️ 3) profile image link
   metaPixelId:     "",                                    // 📊 4) Meta Pixel ID (optional)
-  updated:         "4 October 2026"
+  updated:         "4 October 2026",
+  standalonePages: false                                  // 🔗 6) niche neeche dekhein
 };
 ```
+
+> 📋 **Publish karne se pehle `meta-policy-review.md` zaroor parhein** — us review mein 5 blockers
+> aur unke exact fixes diye hue hain (yeh Meta reviewer ki nazar se kiya gaya full audit hai).
 
 ### 3) Profile image kaise lagayein
 - ImgBB / GitHub raw / koi bhi **direct image link** (`.jpg`, `.png`, `.webp`) yahan paste karein:
@@ -54,7 +58,18 @@ Index page ke footer mein 4 buttons hain jo **popup (modal) mein** poori policy 
 | **Contact & Grievance** | Support, privacy requests, fraud reporting, grievance officer |
 
 Popup **keyboard (Esc), backdrop click, aur ✕ button** — teeno se band hota hai.
-Sab policies **offline** hain (koi external page nahi khulta) — ads review ke waqt bhi sab kuch ek hi page par milta hai.
+Keyboard focus bhi popup ke andar hi rehta hai (accessibility). Sab policies **offline** hain —
+koi external page nahi khulta, sab kuch ek hi page par milta hai.
+
+📝 **Saari legal text ab British English (UK) mein hai** — "authorised", "organised", "recognise",
+"I or her personal data", "one month" response time, UK GDPR terminology (data controller, ICO).
+Yeh Meta reviewer ke liye zyada professional aur trustworthy lagta hai.
+
+### `standalonePages` kya hai?
+Agar aap `privacy-policy.html` / `terms-conditions.html` / `disclaimer.html` / `contact.html` bhi
+upload kar rahe hain, to `standalonePages: true` kar dein — har popup ke footer mein
+**"Open full page ↗"** link aa jayega. Meta Business Manager mein "Privacy Policy URL" ke liye
+yehi standalone URL chahiye hota hai (popup ka URL share nahi kiya ja sakta).
 
 ### Standalone policy pages (optional)
 Root mein `privacy-policy.html`, `terms-conditions.html`, `disclaimer.html`, `contact.html` bhi hain —
@@ -85,6 +100,7 @@ same content, direct URL ke liye (agar kabhi Meta review ya kisi ad platform ko 
 - [ ] Footer ke 4 popup buttons kholke check kiye — sab chal rahe hain
 - [ ] Business Manager mein **domain verify** kiya
 - [ ] Pixel + `Lead` event test kiya
+- [ ] `og:image` lagaya (head mein commented line hai) — link ad ka preview card ke liye
 - [ ] Ad copy `meta-ads-guide.md` se li (koi income/profit claim nahi)
 
 ### Yeh page kyun policy-safe hai
@@ -121,6 +137,7 @@ same content, direct URL ke liye (agar kabhi Meta review ya kisi ad platform ko 
 ```
 index.html              ← 🔴 SIRF YEH FILE CHAHIYE (complete landing page + policies)
 meta-ads-guide.md       ← ad copy angles + kya nahi likhna + campaign setup
+meta-policy-review.md   ← 🔎 Meta reviewer ki nazar se full audit (5 blockers + fixes)
 README.md               ← yeh file
 
 privacy-policy.html     ┐
