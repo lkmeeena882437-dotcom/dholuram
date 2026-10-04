@@ -401,7 +401,7 @@ strong,b{color:var(--ink);font-weight:700}
 .brand-footer{margin-bottom:.9rem}
 .footer-about{font-size:.89rem;color:var(--muted)}
 .footer-contact{font-size:.89rem;margin:0}
-.footer-col h4{font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:.9rem}
+.footer-col h4,.footer-col h3{font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:.9rem;font-weight:700}
 .footer-col ul{display:grid;gap:.5rem}
 .footer-col li a{font-size:.89rem;color:var(--muted)}
 .footer-col li a:hover{color:var(--emerald-d)}
