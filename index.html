@@ -140,11 +140,13 @@ a{color:var(--em-d)}
 }
 .ring.has-photo .mono{display:none}
 .verified{
-  position:absolute;right:-1px;bottom:1px;
-  width:clamp(20px,3.3vh,28px);aspect-ratio:1;border-radius:50%;
-  background:linear-gradient(135deg,#0EA5E9,#0E9F6E);color:#fff;
-  display:grid;place-items:center;font-size:.6rem;font-weight:900;
-  border:2.5px solid #fff;box-shadow:0 4px 12px rgba(14,116,144,.35);
+  position:absolute;right:-8px;bottom:-3px;
+  border-radius:999px;padding:3px 8px;
+  background:linear-gradient(135deg,#0E9F6E,#0E7490);color:#fff;
+  font-family:var(--font-h);font-size:clamp(.5rem,1.05vh,.6rem);
+  font-weight:900;letter-spacing:.1em;line-height:1;
+  border:2px solid #fff;box-shadow:0 5px 14px rgba(14,116,144,.35);
+  white-space:nowrap;
 }
 .brandname{
   font-family:var(--font-h);font-weight:900;letter-spacing:.035em;text-transform:uppercase;
@@ -343,7 +345,7 @@ h1.headline{
           <span class="mono" id="mono" aria-hidden="true">HM</span>
         </div>
       </div>
-      <span class="verified" title="Verified community">✓</span>
+      <span class="verified" title="Community administrator">ADMIN</span>
     </div>
 
     <p class="brandname" data-cfg="channelName">HAJI MEMON SALMAN TRADER</p>
@@ -351,7 +353,7 @@ h1.headline{
 
     <div class="badges">
       <span class="badge">🎓 Learning only</span>
-      <span class="badge">🇵🇰 Urdu + English</span>
+      <span class="badge">🌐 Urdu + English</span>
       <span class="badge">🆓 100% Free</span>
     </div>
 

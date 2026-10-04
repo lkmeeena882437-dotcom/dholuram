@@ -10,9 +10,11 @@
 | Risk | Kitne items | Ad chal sakta hai? |
 |---|---|---|
 | 🔴 **Blocker** (publish se pehle fix karna zaroori) | 5 | ❌ inke bina reject / broken ad |
-| 🟠 **Medium** (reject ho sakta hai, ya performance kharab) | 6 | ⚠️ fix karne se risk kam |
-| 🟡 **Low / note** | 5 | ✅ ignore kar sakte hain |
+| 🟠 **Medium** (reject ho sakta hai, ya performance kharab) | 6 → **3 baaki** (2 resolve ho gaye) | ⚠️ fix karne se risk kam |
+| 🟡 **Low / note** | 5 → **4** (1 resolve) | ✅ ignore kar sakte hain |
 | ✅ **Passed** (Meta jo maangta hai woh maujood hai) | 12 | ✅ |
+
+**Targeting (confirmed):** 🇮🇳 **India only** — iske hisaab se neeche ek alag section bhi add kiya gaya hai.
 
 **Bottom line:** Page ki **structure aur content policy-safe hai** — kahin koi profit/income claim nahi,
 koi personal-attribute targeting nahi, koi prohibited category nahi. Lekin **5 blockers** hain jo
@@ -73,10 +75,9 @@ ka **naam + contact** publicly hona chahiye. Sirf brand name kaafi nahi.
 **Evidence:** `index.html` — `.verified` badge, `title="Verified community"` (profile photo ke neeche)
 **Kyun:** Check-mark badge platform verification (optional official/endorsed account) ka symbol hai.
 Meta "Misleading or false content / false endorsement" ke tehat ise flag kar sakta hai.
-**Fix (aap chunein):**
-- **(A)** Badge hata dein — sabse safe
-- **(B)** Badge rakhein lekin matlab badal dein → "Admin" label, green tick ke bajaye
-- **(C)** Waisa hi chhod dein — risk kam hai lekin zero nahi
+**✅ RESOLVED** — Aapne option (B) chuna. Ab badge mein tick ke bajaye **"ADMIN"** pill hai
+(`title="Community administrator"`). Koi platform-verification ka claim nahi bacha, aur trust element
+bhi maujood hai. Naya badge gradient pill hai jo profile photo ke bottom-right par baithta hai.
 
 ### M2. Financial products & services policy
 **Kyun:** Meta ka Financial Services rules + kuch desho (India = SEBI/RBI registration, kai GCC countries =
@@ -92,8 +93,11 @@ words se aapki ad ko **"Financial products"** category mein daal sakta hai.
 **Evidence:** JS — `loadPixel()` page load par chalta hai, pehle pixel bina consent ke load hota hai.
 **Kyun:** UK GDPR / PECR ke tehat advertising cookies se pehle consent chahiye. India/Pakistan target kar rahe
 hain to risk **kam** hai (lekin UAE/Saudi/EU add karte hi risk badh jayega).
-**Fix:** Sirf India/Pakistan target karein (default safe), **ya** btaayein — main ek chhota consent banner
-(bas 1 line + Accept/Decline) add kar dun, page design same rahega.
+**✅ RESOLVED** — Aap **sirf India** target kar rahe hain, is liye consent banner ki zaroorat nahi.
+Pixel seedha load hota hai aur page simple rehta hai (DPDP Act 2023 ke tehat is level par prior consent
+mandatory nahi hai; phir bhi privacy policy mein purpose saaf likha hua hai).
+⚠️ **Zaroori:** agar kal ko aap **Gulf / UK / EU** targeting add karein, to yeh item wapas khul jayega —
+tab ek chhota consent gate lagana padega. Bas bata dein, 5 minute ka kaam hai.
 
 ### M4. Landing page "thin content" score
 **Kyun:** Single-screen page mein visible text kam hai. Meta ki landing-page-quality guideline "original,
@@ -118,7 +122,7 @@ phir bhi chahein to policies ko visible FAQ ki tarah neeche add kiya ja sakta ha
 
 ## 🟡 LOW / notes
 
-1. **🇵🇰 flag badge** — language batata hai lekin ek region ko highlight karta hai; general audience (Gulf, non-Pakistani) ko thoda exclude feel hota hai. Chahein to 🌐 ya 🗣️ kar dein.
+1. **✅ RESOLVED — flag badge** — 🇵🇰 ki jagah ab **🌐 (global)** hai. Faayda: India ke andar bhi non-Urdu/general audience comfortable rehti hai, aur agar aap kabhi Gulf expand karein to badge wahi rahega.
 2. **"18+" pill** — good practice hai. Bas ad set mein **minimum age 18** set karein (Advantage+ audience mein bhi).
 3. **Roman Urdu copy** — Pakistan/India audience ke liye CTR acha karta hai; Meta language targeting ke saath match rakhein warna delivery slow lagegi.
 4. **Popup-automation** — page par **koi auto-popup nahi** hai (yeh acha hai). Meta auto-interstitials ko "bad landing page experience" maanta hai. Isko aise hi rakhein — popup sirf click par khule.
@@ -158,6 +162,68 @@ phir bhi chahein to policies ko visible FAQ ki tarah neeche add kiya ja sakta ha
 
 Afreen 🔥 — in 5 steps ke baad ad **smoothly chalne chahiye**. Uske baad: domain verify, `og:image`,
 aur `meta-ads-guide.md` ki ad copy.
+
+---
+
+---
+
+---
+
+## 🇮🇳 India-only targeting — khaas dhyaan dene wali baatein
+
+Aapne confirm kiya: ads **sirf India** mein chalenge. Isse do cheezein asaan ho gayi (consent banner ki
+zaroorat khatam) aur kuch naye points aa gaye:
+
+### 1. SEBI / RBI / IRDAI authorisation — sirf products/services bechne par
+Meta India un advertisers se **regulator registration** maangta hai jo **financial products ya services
+promote** karte hain (SEBI = securities, RBI = banking/NBFC, IRDAI = insurance).
+Aap kuch **bech nahi rahe** — free educational community hai. Is liye aap generally is requirement ke
+bahar hain. Lekin automated classifier yeh fark nahi samajhta, is liye:
+- Ad copy/creative mein `forex`, `signals`, `crypto`, `profit`, `returns`, `guaranteed` **bilkul na daalein**
+- Agar ad "Financial products and services" category mein flag ho jaye → **Appeal** karein:
+  > "Free educational community. We sell no financial product or service, provide no investment advice,
+  > signals or recommendations, and make no income claims."
+- Kabhi bhi brokerage, prop firm, ya paid course promote karne lagein → tab registration zaroori ho jayegi.
+
+### 2. ⚠️ SEBI ke "finfluencer" rules — sabse important operational warning
+SEBI ne unregistered logon ko **stock recommendations / buy-sell tips** dene se rok rakha hai
+(Research Analyst regulations). Aapka page, ad aur **Telegram channel ka content** — teeno
+"education only, no tips, no signals" line ke is taraf rehna chahiye. Agar channel par kabhi
+"yeh stock kharido" type call aaya:
+- SEBI regulation ka risk banega,
+- aur **landing page ka claim jhoota ho jayega** → Meta ke tehat "misleading" bhi banega.
+> 👉 Admin ko yeh rule daily yaad dilana zaroori hai. Yeh aapki ad account se bhi zyada important hai.
+
+### 3. IT Rules 2021 — grievance officer ke saath naam + address
+India mein identified grievance officer ka **naam + contact + address** publicly hona chahiye.
+Yeh **B5** ko aur zaroori bana deta hai — Contact popup mein asli naam aur shehar (jaise "Mumbai,
+Maharashtra") add karein. Meta bhi isi cheez ko transparency ke liye check karta hai.
+
+### 4. DPDP Act 2023 (India ka naya data law)
+- Aapke page par **koi form nahi hai** (sirf Telegram button) → aap user se seedha data collect nahi karte,
+  is liye additional consent notice ki zaroorat nahi.
+- Agar aap Meta **lead form** (Instant Form) use karte hain, to consent notice Meta ke form par hi
+  handle hota hai — lekin wahan likhein: *"Aap ko free educational updates bhejne ke liye hum aapka
+  contact use karenge. Kabhi bhi unsubscribe kar sakte hain."*
+- Data kabhi bechna nahi — ye Privacy Policy mein already likha hai ✅
+
+### 5. British English = India ke liye bilkul sahi
+Good news: Indian legal aur advertising English **British conventions** follow karti hai. Aapke chaaron
+policy popups ab UK English mein hain (authorised, organisational, ICO wording) — Indian users,
+lawyers aur Meta reviewer teeno ke liye natural lagta hai. 🎯
+
+### 6. Ad set-up tips (India)
+| Setting | Recommended |
+|---|---|
+| Placements | Instagram Reels + Facebook Reels + Feed (India mein Reels sabse sasta reach deta hai) |
+| Age | 18+ (page par bhi 18+ likha hai — match karna zaroori) |
+| Language | Roman Urdu + Hinglish copy. Muslim audience ke liye Roman Urdu, general audience ke liye Hinglish |
+| Objective | Leads (Instant Form) ya Traffic (landing page par) |
+| Billing | Indian payment method + GST invoice (Meta 18% GST charge karta hai) |
+| Domain verify | Business Manager → Brand Safety → Domains (India mein bhi waiver ke liye zaroori) |
+
+> 💡 Chahein to main aapke liye **Hinglish ad copy** ke 2-3 extra angles bhi likh dun (India ke general
+> audience ke liye) — bas bata dein.
 
 ---
 
