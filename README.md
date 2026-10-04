@@ -17,7 +17,7 @@ var CONFIG = {
   telegramUrl:     "https://t.me/AapKaChannelUsername",   // 🔴 1) apna channel link
   contactEmail:    "aapka-email@gmail.com",               // 🔴 2) apna email
 
-  profileImageUrl: "",                                    // 🖼️ 3) profile image link
+  profileImageUrl: "https://i.ibb.co/9HZyJ6Tx/Whats-App-...jpg", // 🖼️ 3) already laga hua hai ✅
   metaPixelId:     "",                                    // 📊 4) Meta Pixel ID (optional)
   updated:         "4 October 2026",
   standalonePages: false                                  // 🔗 6) niche neeche dekhein
@@ -27,16 +27,17 @@ var CONFIG = {
 > 📋 **Publish karne se pehle `meta-policy-review.md` zaroor parhein** — us review mein 5 blockers
 > aur unke exact fixes diye hue hain (yeh Meta reviewer ki nazar se kiya gaya full audit hai).
 
-### 3) Profile image kaise lagayein
-- ImgBB / GitHub raw / koi bhi **direct image link** (`.jpg`, `.png`, `.webp`) yahan paste karein:
-  ```js
-  profileImageUrl: "https://i.ibb.co/abc123/memon-bhai.jpg"
-  ```
+### 3) Profile image (✅ already laga hua hai)
+- Aapki imgbb image **already page par live hai** — avatar mein aur `og:image` (link preview) mein.
+- Badalni ho to `profileImageUrl` mein naya **direct image link** paste karein — HTML mein bhi
+  `<img id="avatar" src="...">` update kar dein (ya bas config hi kaafi hai).
+- Image load na ho to **HM monogram** dikhta hai — page kabhi toota hua nahi lagega.
+- ⚠️ **Image par koi text/claim na ho** (jaise "guaranteed profit") — warna ad reject ka risk hai.
 - Naam, email, Telegram link **aur** profile photo — sab automatically page par lag jate hain.
 - Link khali ya galat ho to **HM monogram** (gradient circle) dikhta hai — page kabhi toota hua nahi lagega.
 - 🟢 **Best size: 400×400 px, square, 200 KB se kam** — mobile par sabse tez load hota hai.
 
-### 4) Meta Pixel (optional, ads ke liye recommended)
+### 4) Meta Pixel (ads ke liye recommended)
 ```js
 metaPixelId: "1234567890123456"
 ```
