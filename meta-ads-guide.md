@@ -100,10 +100,10 @@ copy hai jo policy-safe hai, plus kya likhna **mana** hai.
 - Text-on-screen + soft background music (chehra dikhana zaroori nahi)
 
 ### Pixel connection
-1. `assets/js/config.js` mein `metaPixelId` daalein
+1. `index.html` ke `<script>` mein `CONFIG.metaPixelId` daalein
 2. Events Manager → **Test Events** kholein
 3. Page kholkar "Join Free" dabayein → `Lead` event nazar aana chahiye
-4. Cookie banner par **Accept** dabana zaroori hai (consent ke baad hi pixel load hota hai)
+4. Landing page ke footer se chaaron legal popups ek baar kholein (reviewer bhi yahi karta hai)
 
 ---
 

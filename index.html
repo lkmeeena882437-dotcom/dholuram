@@ -2,559 +2,839 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>HAJI MEMON SALMAN TRADER — Free Telegram Trading Education Community</title>
-<meta name="description" content="Join HAJI MEMON SALMAN TRADER — a 100% free Telegram community for learning trading basics, risk management and market discipline in English & Urdu. Educational purpose only. No paid courses, no profit guarantees." />
+<meta name="description" content="Join HAJI MEMON SALMAN TRADER — a 100% free Telegram learning community for trading basics, risk management and market discipline in English &amp; Urdu. Educational purpose only. 18+." />
 <meta name="robots" content="index,follow" />
 <meta name="theme-color" content="#FFFBF2" />
-<link rel="canonical" href="https://example.com/" />
+<meta name="format-detection" content="telephone=no" />
 
-<!-- Open Graph / Social -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="HAJI MEMON SALMAN TRADER — Free Trading Education Community" />
-<meta property="og:description" content="Free Telegram community for trading education. Learn in English & Urdu. Educational purpose only — no fees, no signals selling, no profit promises." />
+<meta property="og:title" content="HAJI MEMON SALMAN TRADER — Free Telegram Education Community" />
+<meta property="og:description" content="Free educational community. Learn trading basics, risk management and discipline in English &amp; Urdu. No fees, no tips, no profit guarantees." />
 <meta property="og:site_name" content="HAJI MEMON SALMAN TRADER" />
 <meta name="twitter:card" content="summary_large_image" />
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230E9F6E'/%3E%3Cpath d='M16 40l10-12 8 8 14-18' stroke='%23FFD86B' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="assets/css/styles.css" />
+<style>
+/* ============================================================
+   HAJI MEMON SALMAN TRADER — single-file landing page
+   Cream base · colorful gradient type · one-screen layout
+   ============================================================ */
+:root{
+  --cream:#FFFBF2;
+  --cream2:#FDF3E4;
+  --ink:#11201A;
+  --ink2:#3C5147;
+  --muted:#6E8177;
+  --em:#0E9F6E;
+  --em-d:#05724E;
+  --teal:#0E7490;
+  --gold:#D99B18;
+  --violet:#7C3AED;
+  --rose:#E5484D;
+  --line:rgba(17,32,26,.10);
+  --font-h:"Outfit",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-b:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --radius:999px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--font-b);
+  color:var(--ink2);
+  font-size:16px;
+  line-height:1.6;
+  background:
+    radial-gradient(1000px 620px at 10% -12%, #DCF6EA 0%, rgba(220,246,234,0) 62%),
+    radial-gradient(880px 560px at 94% -4%, #FFEFC9 0%, rgba(255,239,201,0) 60%),
+    radial-gradient(900px 640px at 50% 118%, #E8E1FF 0%, rgba(232,225,255,0) 62%),
+    linear-gradient(180deg,var(--cream) 0%, var(--cream2) 100%);
+  min-height:100vh;
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='76' height='76' viewBox='0 0 76 76'%3E%3Cg fill='none' stroke='%230E9F6E' stroke-opacity='0.13'%3E%3Cpath d='M38 5l33 33-33 33L5 38z'/%3E%3Cpath d='M38 21l17 17-17 17-17-17z'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image:radial-gradient(130% 78% at 50% 0%,#000 12%,transparent 76%);
+  mask-image:radial-gradient(130% 78% at 50% 0%,#000 12%,transparent 76%);
+}
+img{display:block;max-width:100%}
+a{color:var(--em-d)}
 
-<!-- Structured data: helps Meta & Google understand the page -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "HAJI MEMON SALMAN TRADER",
-  "description": "Free educational Telegram community for learning trading basics, risk management and market discipline.",
-  "url": "https://example.com/",
-  "sameAs": ["https://t.me/YourChannelUsername"],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "email": "contact@hajimemonsalmantrader.com",
-    "availableLanguage": ["English", "Urdu", "Hindi"]
+/* ---------- one-screen shell ---------- */
+.screen{
+  position:relative;z-index:1;
+  width:100%;max-width:640px;
+  min-height:100vh;min-height:100dvh;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+  gap:clamp(6px,1.2vh,16px);
+  padding:clamp(12px,1.8vh,20px) clamp(16px,4.4vw,32px) calc(clamp(12px,1.8vh,20px) + env(safe-area-inset-bottom,0px));
+}
+@media (min-width:760px){
+  body{align-items:center;padding:22px}
+  .screen{
+    min-height:0;
+    height:min(88vh,880px);height:min(88dvh,880px);
+    border:1px solid var(--line);border-radius:34px;
+    background:rgba(255,255,255,.66);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    box-shadow:0 34px 90px rgba(17,32,26,.13);
+    padding:26px 34px;
   }
 }
-</script>
+
+/* ---------- top bar ---------- */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex:0 0 auto}
+.brand{display:flex;align-items:center;gap:8px;min-width:0}
+.brand svg{width:27px;height:27px;flex:0 0 auto;filter:drop-shadow(0 5px 12px rgba(14,117,144,.22))}
+.brand b{
+  font-family:var(--font-h);font-weight:900;letter-spacing:.03em;color:var(--ink);
+  font-size:clamp(.66rem,1.5vh,.8rem);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.pill-18{
+  flex:0 0 auto;font-weight:800;font-size:clamp(.6rem,1.35vh,.7rem);letter-spacing:.04em;
+  color:#8A5E06;background:#FDF1D6;border:1px solid rgba(217,155,24,.32);
+  border-radius:var(--radius);padding:.22rem .55rem;white-space:nowrap;
+}
+
+/* ---------- center stage ---------- */
+.stage{
+  flex:1 1 auto;min-height:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:clamp(6px,1.1vh,14px);
+}
+
+/* profile photo with gradient ring */
+.avatar-wrap{position:relative;width:clamp(74px,13vh,112px);aspect-ratio:1;flex:0 0 auto}
+.ring{
+  position:absolute;inset:0;border-radius:50%;padding:3px;
+  background:conic-gradient(from 150deg,#0E9F6E,#0EA5E9,#7C3AED,#D99B18,#0E9F6E);
+  box-shadow:0 14px 32px rgba(14,116,144,.24);
+  animation:spinhue 12s linear infinite;
+}
+@keyframes spinhue{to{filter:hue-rotate(360deg)}}
+.ring-inner{position:absolute;inset:3px;border-radius:50%;overflow:hidden;background:#fff}
+.ring img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:none}
+.ring.has-photo img{display:block}
+.mono{
+  position:absolute;inset:0;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,#0E9F6E,#0E7490 92%);
+  color:#fff;font-family:var(--font-h);font-weight:900;letter-spacing:.02em;
+  font-size:clamp(1.2rem,3.1vh,1.85rem);
+}
+.ring.has-photo .mono{display:none}
+.verified{
+  position:absolute;right:-1px;bottom:1px;
+  width:clamp(20px,3.3vh,28px);aspect-ratio:1;border-radius:50%;
+  background:linear-gradient(135deg,#0EA5E9,#0E9F6E);color:#fff;
+  display:grid;place-items:center;font-size:.6rem;font-weight:900;
+  border:2.5px solid #fff;box-shadow:0 4px 12px rgba(14,116,144,.35);
+}
+.brandname{
+  font-family:var(--font-h);font-weight:900;letter-spacing:.035em;text-transform:uppercase;
+  font-size:clamp(.94rem,2.4vh + .45vw,1.35rem);line-height:1.2;margin:0;
+  background:linear-gradient(95deg,#05724E 0%,#0E7490 45%,#7C3AED 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+}
+.handle{margin:0;font-weight:600;color:var(--muted);font-size:clamp(.68rem,1.45vh,.82rem)}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:5px}
+.badge{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:.24rem .58rem;font-weight:700;color:var(--ink2);
+  font-size:clamp(.62rem,1.35vh,.74rem);box-shadow:0 2px 8px rgba(17,32,26,.05);
+}
+
+h1.headline{
+  font-family:var(--font-h);font-weight:800;color:var(--ink);letter-spacing:-.02em;
+  font-size:clamp(1.12rem,3.2vh + .75vw,1.95rem);line-height:1.18;
+  margin:clamp(2px,.8vh,8px) 0 0;max-width:24ch;
+}
+.grad{
+  background:linear-gradient(96deg,#0E9F6E 0%,#0EA5E9 38%,#7C3AED 72%,#E5484D 100%);
+  background-size:220% 100%;animation:slide 8s ease-in-out infinite alternate;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+}
+.grad2{
+  background:linear-gradient(96deg,#D99B18,#E5484D 60%,#7C3AED);
+  background-size:200% 100%;animation:slide 7s ease-in-out infinite alternate;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+}
+@keyframes slide{from{background-position:0% 50%}to{background-position:100% 50%}}
+.sub{
+  margin:0;color:var(--ink2);line-height:1.62;max-width:38ch;
+  font-size:clamp(.78rem,1.7vh,.97rem);
+}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.chip{
+  display:inline-flex;align-items:center;gap:5px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:.3rem .6rem;font-weight:600;color:var(--ink2);
+  font-size:clamp(.63rem,1.4vh,.76rem);box-shadow:0 2px 9px rgba(17,32,26,.05);
+}
+
+/* ---------- call to action ---------- */
+.cta{
+  display:flex;align-items:center;justify-content:center;gap:.55rem;
+  width:100%;max-width:440px;text-decoration:none;color:#fff;
+  font-family:var(--font-h);font-weight:800;letter-spacing:.01em;
+  font-size:clamp(.9rem,2.05vh,1.1rem);
+  padding:clamp(.7rem,1.85vh,.98rem) 1.2rem;
+  border-radius:var(--radius);
+  background:linear-gradient(135deg,#0E9F6E 0%,#0C8A7A 52%,#0E7490 100%);
+  box-shadow:0 14px 32px rgba(14,159,110,.32);
+  position:relative;overflow:hidden;
+  transition:transform .18s ease, box-shadow .22s ease;
+}
+.cta:hover{transform:translateY(-2px);box-shadow:0 20px 42px rgba(14,159,110,.4)}
+.cta:active{transform:translateY(0) scale(.995)}
+.cta svg{width:1.2em;height:1.2em;fill:currentColor;flex:0 0 auto}
+.cta::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(118deg,transparent 22%,rgba(255,255,255,.38) 50%,transparent 78%);
+  transform:translateX(-130%);
+}
+.cta:hover::after{transform:translateX(130%);transition:transform .85s ease}
+.fine{
+  margin:0;color:var(--muted);line-height:1.5;max-width:36ch;
+  font-size:clamp(.63rem,1.3vh,.75rem);
+}
+
+/* ---------- footer ---------- */
+.foot{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;flex:0 0 auto}
+.legal-links{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 6px;
+  font-size:clamp(.66rem,1.42vh,.78rem);font-weight:700;
+}
+.legal-links button{
+  font:inherit;font-weight:700;color:var(--em-d);background:none;border:0;padding:2px 1px;
+  cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;
+}
+.legal-links button:hover{color:var(--violet)}
+.sep{color:rgba(17,32,26,.28);font-weight:700}
+.risk{
+  margin:0;color:var(--muted);line-height:1.45;max-width:46ch;
+  font-size:clamp(.58rem,1.22vh,.7rem);
+}
+.copy{margin:0;color:#8A9A90;font-size:clamp(.56rem,1.18vh,.67rem)}
+
+/* ============================================================
+   MODALS — legal pages
+   ============================================================ */
+.modal{position:fixed;inset:0;z-index:120;display:flex;align-items:center;justify-content:center;padding:14px}
+.modal[hidden]{display:none}
+.modal-back{position:absolute;inset:0;background:rgba(17,32,26,.46);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);animation:fade .22s ease}
+.modal-card{
+  position:relative;width:100%;max-width:660px;max-height:88vh;max-height:88dvh;
+  background:#FFFDF8;border-radius:24px;border:1px solid var(--line);
+  box-shadow:0 30px 80px rgba(17,32,26,.3);
+  display:flex;flex-direction:column;overflow:hidden;
+  animation:pop .26s cubic-bezier(.2,.8,.3,1);
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+.modal-head{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 16px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#FFFCF4,#FFF8EC);
+}
+.modal-head h3{margin:0;font-family:var(--font-h);font-size:1.02rem;color:var(--ink);letter-spacing:-.01em}
+.modal-head small{display:block;font-size:.68rem;color:var(--muted);font-weight:600}
+.x{
+  flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
+  background:#fff;color:var(--ink2);font-size:1rem;font-weight:700;cursor:pointer;line-height:1;
+}
+.x:hover{background:#F5F6F5;color:var(--rose)}
+.modal-body{
+  padding:16px 18px 20px;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  font-size:.9rem;color:var(--ink2);
+}
+.modal-body h4{
+  font-family:var(--font-h);color:var(--ink);font-size:.95rem;margin:1.15rem 0 .35rem;letter-spacing:-.01em;
+}
+.modal-body h4:first-child{margin-top:0}
+.modal-body p{margin:0 0 .7rem}
+.modal-body ul{margin:0 0 .8rem;padding:0;list-style:none;display:grid;gap:.35rem}
+.modal-body ul li{padding-left:1rem;position:relative}
+.modal-body ul li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--em);opacity:.65}
+.modal-note{
+  background:#F5FCF8;border-left:3px solid var(--em);border-radius:0 12px 12px 0;
+  padding:.7rem .85rem;margin:.9rem 0;font-size:.85rem;
+}
+.modal-note.warn{background:#FFFCF1;border-left-color:var(--gold)}
+.modal-foot{
+  display:flex;gap:8px;justify-content:flex-end;align-items:center;flex-wrap:wrap;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:#FFFCF4;
+}
+.mbtn{
+  font-family:var(--font-h);font-weight:700;font-size:.85rem;padding:.6rem 1.05rem;border-radius:999px;
+  border:1px solid var(--line);background:#fff;color:var(--ink2);cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;gap:.4rem;
+}
+.mbtn:hover{background:#F6F7F6}
+.mbtn.join{background:linear-gradient(135deg,#0E9F6E,#0E7490);color:#fff;border-color:transparent;box-shadow:0 10px 22px rgba(14,159,110,.28)}
+.mbtn.join:hover{transform:translateY(-1px)}
+.contact-cards{display:grid;gap:10px;grid-template-columns:1fr}
+@media (min-width:560px){.contact-cards{grid-template-columns:1fr 1fr}}
+.ccard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.85rem 1rem}
+.ccard b{display:block;font-family:var(--font-h);color:var(--ink);font-size:.9rem;margin-bottom:.15rem}
+.ccard p{margin:0;font-size:.85rem}
+.mono-sm{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;word-break:break-all}
+
+/* ---------- fit tweaks for short screens ---------- */
+@media (max-height:700px){
+  .chips{display:none}
+  .avatar-wrap{width:clamp(68px,14vh,92px)}
+}
+@media (max-height:580px){
+  .badges{display:none}
+  .sub{font-size:.78rem}
+}
+@media (max-height:470px){
+  .fine{display:none}
+  h1.headline{font-size:1.02rem}
+  .sub{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+}
+</style>
 </head>
-<body class="page-home">
 
-<a class="skip-link" href="#main">Skip to content</a>
+<body>
+<main class="screen">
 
-<!-- ============ TOP STRIP ============ -->
-<div class="topstrip">
-  <div class="wrap topstrip-inner">
-    <span class="dot-pulse" aria-hidden="true"></span>
-    <p><strong>100% Free</strong> · Learning &amp; Education only · No paid courses · No profit guarantees</p>
-  </div>
-</div>
+  <!-- ===== TOP BAR ===== -->
+  <header class="topbar">
+    <span class="brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0E9F6E"/><stop offset="100%" stop-color="#0E7490"/></linearGradient></defs>
+        <rect width="64" height="64" rx="18" fill="url(#lg)"/>
+        <path d="M14 42l11-13 8 8 17-21" fill="none" stroke="#FFD86B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <b data-cfg="channelName">HAJI MEMON SALMAN TRADER</b>
+    </span>
+    <span class="pill-18">Free Community · 18+</span>
+  </header>
 
-<!-- ============ HEADER ============ -->
-<header class="site-header" id="siteHeader">
-  <div class="wrap header-inner">
-    <a class="brand" href="index.html" aria-label="HAJI MEMON SALMAN TRADER home">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 64 64" width="40" height="40" role="img">
-          <defs>
-            <linearGradient id="bm" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#0E9F6E"/><stop offset="100%" stop-color="#0E7490"/>
-            </linearGradient>
-          </defs>
-          <rect width="64" height="64" rx="18" fill="url(#bm)"/>
-          <path d="M14 42l11-13 8 8 17-21" fill="none" stroke="#FFD86B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      <span class="brand-text">
-        <strong data-config="channelName">HAJI MEMON SALMAN TRADER</strong>
-        <small>Free Trading Education Community</small>
-      </span>
+  <!-- ===== CENTER STAGE ===== -->
+  <section class="stage">
+
+    <!-- Profile -->
+    <div class="avatar-wrap">
+      <div class="ring" id="ring">
+        <div class="ring-inner">
+          <img id="avatar" alt="HAJI MEMON SALMAN TRADER profile photo" referrerpolicy="no-referrer" decoding="async" />
+          <span class="mono" id="mono" aria-hidden="true">HM</span>
+        </div>
+      </div>
+      <span class="verified" title="Verified community">✓</span>
+    </div>
+
+    <p class="brandname" data-cfg="channelName">HAJI MEMON SALMAN TRADER</p>
+    <p class="handle" id="handle">Free Educational Community</p>
+
+    <div class="badges">
+      <span class="badge">🎓 Learning only</span>
+      <span class="badge">🇵🇰 Urdu + English</span>
+      <span class="badge">🆓 100% Free</span>
+    </div>
+
+    <h1 class="headline">
+      Trading Seekhein — <span class="grad">Apni Zubaan Mein</span>, Bilkul <span class="grad2">Free</span>.
+    </h1>
+
+    <p class="sub">
+      Beginner-friendly <b>educational community</b> for trading basics, risk management aur market discipline.
+      Koi fees nahi · koi signals nahi · sirf taleem.
+    </p>
+
+    <div class="chips">
+      <span class="chip">📊 Market Basics</span>
+      <span class="chip">🛡️ Risk Management</span>
+      <span class="chip">🧠 Trading Discipline</span>
+    </div>
+
+    <a class="cta" id="joinBtn" href="https://t.me/YourChannelUsername" data-cfg-href="telegramUrl" rel="noopener nofollow" target="_blank">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 19 19.2c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.5.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.6 12.3l-4.4-1.4c-.9-.3-.9-.9.2-1.3l17-6.6c.8-.3 1.5.2 1.5 1.3z"/></svg>
+      Join Free Telegram Channel
     </a>
 
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#learn">What You Learn</a>
-      <a href="#why">Why Join</a>
-      <a href="#rules">Community Rules</a>
-      <a href="#faq">FAQ</a>
-      <a href="contact.html">Contact</a>
+    <p class="fine">
+      Educational purpose only · No tips or signals · No profit guarantee · Join aur leave anytime
+    </p>
+  </section>
+
+  <!-- ===== FOOTER / LEGAL POPUPS ===== -->
+  <footer class="foot">
+    <nav class="legal-links" aria-label="Legal and policy pages">
+      <button type="button" data-open="privacy">Privacy Policy</button><span class="sep">·</span>
+      <button type="button" data-open="terms">Terms &amp; Conditions</button><span class="sep">·</span>
+      <button type="button" data-open="disclaimer">Disclaimer</button><span class="sep">·</span>
+      <button type="button" data-open="contact">Contact &amp; Grievance</button>
     </nav>
-
-    <a class="btn btn-primary btn-sm hide-sm" data-config-href="telegramUrl" href="https://t.me/YourChannelUsername" rel="noopener">
-      <svg class="ico-tg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 19 19.2c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.5.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.6 12.3l-4.4-1.4c-.9-.3-.9-.9.2-1.3l17-6.6c.8-.3 1.5.2 1.5 1.3z"/></svg>
-      Join Free
-    </a>
-  </div>
-</header>
-
-<main id="main">
-
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <span class="glow glow-1"></span>
-    <span class="glow glow-2"></span>
-    <span class="glow glow-3"></span>
-    <span class="pattern"></span>
-  </div>
-
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <div class="chip reveal">
-        <span class="chip-ico">🎓</span>
-        <span>Free Telegram Community · Beginner Friendly</span>
-      </div>
-
-      <p class="salaam reveal" lang="ur" dir="rtl">السلام عليكم ورحمة الله وبركاته</p>
-
-      <h1 class="reveal">
-        Trading Seekhein —
-        <span class="grad-text">Apni Zubaan Mein,</span>
-        Bilkul <span class="grad-text-2">Free.</span>
-      </h1>
-
-      <p class="lede reveal">
-        <strong data-config="channelName">HAJI MEMON SALMAN TRADER</strong> ek free learning community hai jahan beginners
-        <em>trading basics</em>, <em>risk management</em> aur <em>market discipline</em> seekhte hain —
-        simple English aur Roman Urdu mein. Yeh channel <strong>sirf taleem aur learning</strong> ke liye hai.
-      </p>
-
-      <div class="hero-cta reveal">
-        <a class="btn btn-primary btn-lg" data-config-href="telegramUrl" href="https://t.me/YourChannelUsername" rel="noopener">
-          <svg class="ico-tg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 19 19.2c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.5.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.6 12.3l-4.4-1.4c-.9-.3-.9-.9.2-1.3l17-6.6c.8-.3 1.5.2 1.5 1.3z"/></svg>
-          Join Free Telegram Channel
-        </a>
-        <a class="btn btn-ghost btn-lg" href="#learn">What's inside? →</a>
-      </div>
-
-      <ul class="hero-notes reveal">
-        <li><span class="tick">✓</span> Free to join — no payment, no hidden fees</li>
-        <li><span class="tick">✓</span> Educational content only — no buy/sell tips</li>
-        <li><span class="tick">✓</span> Leave any time with one tap</li>
-      </ul>
-
-      <div class="stats reveal">
-        <div class="stat">
-          <b>100%</b><span>Free Access</span>
-        </div>
-        <div class="stat">
-          <b>A–Z</b><span>Beginner Roadmap</span>
-        </div>
-        <div class="stat">
-          <b>Urdu</b><span>+ English</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Telegram channel mockup -->
-    <div class="hero-art reveal">
-      <div class="phone" role="img" aria-label="Preview of the Telegram learning channel">
-        <div class="phone-bar">
-          <span class="ph-dot"></span>
-          <div class="phone-head">
-            <div class="ph-avatar">HM</div>
-            <div class="ph-title">
-              <strong>HAJI MEMON SALMAN TRADER</strong>
-              <small>community · <span class="online">online</span></small>
-            </div>
-          </div>
-        </div>
-        <div class="phone-body">
-          <div class="msg">
-            <span class="msg-tag tag-green">Lesson 01</span>
-            <p><b>Candlestick Basics 🕯️</b><br/>Har candle 4 cheezein batati hai: Open, High, Low, Close. Pehle inhe samajhna zaroori hai.</p>
-            <span class="msg-time">Today · 9:00 AM</span>
-          </div>
-          <div class="msg">
-            <span class="msg-tag tag-gold">Risk</span>
-            <p><b>Rule #1: Capital Protect 🛡️</b><br/>Ek trade par 1–2% se zyada risk mat karein. Stop-loss pehle set karein, phir entry.</p>
-            <span class="msg-time">Today · 1:30 PM</span>
-          </div>
-          <div class="msg">
-            <span class="msg-tag tag-violet">Q&amp;A</span>
-            <p><b>Aapke Sawal, Hamare Jawab 💬</b><br/>Learning se juda koi bhi sawal? Weekly Q&amp;A mein poochein.</p>
-            <span class="msg-time">Today · 7:00 PM</span>
-          </div>
-          <div class="phone-note">
-            <span>📚 Education only</span>
-            <span>🚫 No tips</span>
-            <span>💸 Free forever</span>
-          </div>
-        </div>
-      </div>
-      <span class="float-badge fb-1">🇬🇧 English</span>
-      <span class="float-badge fb-2">🇵🇰 Roman Urdu</span>
-      <span class="float-badge fb-3">🤝 Respectful Space</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ MARQUEE ============ -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>📚 Trading Basics</span><span>🛡️ Risk Management</span><span>🧠 Trading Psychology</span>
-    <span>📈 Technical Analysis</span><span>🗺️ Beginner Roadmap</span><span>💬 Weekly Q&amp;A</span>
-    <span>📚 Trading Basics</span><span>🛡️ Risk Management</span><span>🧠 Trading Psychology</span>
-    <span>📈 Technical Analysis</span><span>🗺️ Beginner Roadmap</span><span>💬 Weekly Q&amp;A</span>
-  </div>
-</div>
-
-<!-- ============ LEARN ============ -->
-<section class="section" id="learn">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow eyebrow-emerald">What You Will Learn</span>
-      <h2>Seekhne ke liye ek saaf, <span class="grad-text">step-by-step</span> roadmap</h2>
-      <p>Pehle concepts, phir practice. Hamare posts simple hain — chart ka jargon nahi, seedha matlab.</p>
-    </div>
-
-    <div class="grid grid-3">
-      <article class="card reveal">
-        <div class="card-ico ico-emerald">📊</div>
-        <h3>Market Basics</h3>
-        <p>Market kya hai, kaise chalta hai, candlesticks, support &amp; resistance — zero se shuru.</p>
-      </article>
-      <article class="card reveal">
-        <div class="card-ico ico-teal">🛡️</div>
-        <h3>Risk Management</h3>
-        <p>Stop-loss, lot size, aur capital protection. Sabse zaroori skill jo naye traders skip kar dete hain.</p>
-      </article>
-      <article class="card reveal">
-        <div class="card-ico ico-violet">🧠</div>
-        <h3>Trading Psychology</h3>
-        <p>Greed aur fear ko kaise control karein. Discipline aur patience ki adat kaise banayein.</p>
-      </article>
-      <article class="card reveal">
-        <div class="card-ico ico-gold">📈</div>
-        <h3>Technical Analysis</h3>
-        <p>Charts, patterns aur indicators ki basic samajh — bilkul asaan lafzon mein.</p>
-      </article>
-      <article class="card reveal">
-        <div class="card-ico ico-sky">🗺️</div>
-        <h3>Beginner Roadmap</h3>
-        <p>Kis din kya seekhna hai — ek organised learning path, taake confusion na ho.</p>
-      </article>
-      <article class="card reveal">
-        <div class="card-ico ico-rose">💬</div>
-        <h3>Doubts &amp; Q&amp;A</h3>
-        <p>Learning se juda sawal poochein — Urdu ya English mein, jaisa aapko asaan lage.</p>
-      </article>
-    </div>
-
-    <p class="inline-note reveal">
-      <b>Note:</b> Yeh sab <b>educational lessons</b> hain. Hum koi trading call, tip, ya investment advice nahi dete —
-      aur kisi bhi profit ki guarantee nahi dete.
+    <p class="risk">
+      Educational content only — not investment advice. Trading involves risk of loss. We are not affiliated with,
+      endorsed by or sponsored by Meta Platforms or Telegram. 18+ only.
     </p>
-  </div>
-</section>
-
-<!-- ============ WHY ============ -->
-<section class="section section-tint" id="why">
-  <div class="wrap grid-2">
-    <div class="reveal">
-      <span class="eyebrow eyebrow-gold">Why Join Us</span>
-      <h2>Ek community jo <span class="grad-text-2">seekhne</span> wale ke liye bani hai</h2>
-      <p class="muted">
-        Market mein bohat shor hai. Yahan aapko sirf woh milta hai jo aapki samajh ko behtar banaaye —
-        bina kisi pressure, bina kisi fee ke.
-      </p>
-
-      <ul class="check-list">
-        <li><span class="tick tick-g">✓</span> <b>Bilkul free</b> — membership fee, course fee, ya hidden charges nahi.</li>
-        <li><span class="tick tick-g">✓</span> <b>Beginner-friendly</b> — simple lafzon mein, step-by-step.</li>
-        <li><span class="tick tick-g">✓</span> <b>Urdu + English</b> — jo zubaan aapko samajh aaye, wahi.</li>
-        <li><span class="tick tick-g">✓</span> <b>Respectful mahol</b> — tameez aur adab ke sath baat-cheet.</li>
-        <li><span class="tick tick-g">✓</span> <b>Privacy ka khayal</b> — hum aapka data bechte nahi hain.</li>
-        <li><span class="tick tick-g">✓</span> <b>No pressure</b> — kabhi bhi leave karein, koi sawal nahi.</li>
-      </ul>
-    </div>
-
-    <div class="reveal">
-      <div class="panel panel-values">
-        <h3 class="panel-title">🌸 Hamari Values</h3>
-        <div class="value">
-          <span class="value-ico">🕌</span>
-          <div>
-            <b>Adab &amp; Ethics</b>
-            <p>Content Muslim learners ko samne rakh kar likha jata hai — lekin yeh sab ke liye khula hai. Islami adab, tameez aur ehtram hamari buniyad hai.</p>
-          </div>
-        </div>
-        <div class="value">
-          <span class="value-ico">🚫</span>
-          <div>
-            <b>No Gambling, No Riba Promotion</b>
-            <p>Hum satta, casino, betting ya interest-based products ko promote nahi karte. Hamara focus sirf <b>taleem</b> hai.</p>
-          </div>
-        </div>
-        <div class="value">
-          <span class="value-ico">✅</span>
-          <div>
-            <b>Honest Talk</b>
-            <p>Trading mein risk hai. Hum "lakhpati in 30 days" jaisi baatein nahi bolte — hum zahen banaate hain.</p>
-          </div>
-        </div>
-        <p class="panel-foot">
-          Deeni masle par kisi aalim / mufti se mashwara zaroor karein. Hum ilm ke students hain, hum fatwa nahi dete.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHO IS IT FOR ============ -->
-<section class="section" id="for-who">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow eyebrow-teal">Who Is This For?</span>
-      <h2>Har us shakhs ke liye jo <span class="grad-text">seekhna</span> chahta hai</h2>
-      <p>Muslim learners, students, aur anyone who is curious about markets — sab welcome hain.</p>
-    </div>
-    <div class="grid grid-4">
-      <div class="pill-card reveal"><span>🎓</span><b>Students</b><p>College ya university ke saath side-by-side seekhna.</p></div>
-      <div class="pill-card reveal"><span>🆕</span><b>Absolute Beginners</b><p>Zero knowledge? Bilkul theek — yahan se shuru karein.</p></div>
-      <div class="pill-card reveal"><span>💼</span><b>Job Holders</b><p>Chhoti chhoti posts, poora din busy logon ke liye.</p></div>
-      <div class="pill-card reveal"><span>🏠</span><b>Households &amp; Families</b><p>Ghar se ilm haasil karein, apni raftaar se.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ RULES ============ -->
-<section class="section section-tint" id="rules">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow eyebrow-violet">Community Guidelines</span>
-      <h2>Saaf aur safe community — <span class="grad-text">rules sab par barabar</span></h2>
-      <p>Yeh guidelines isliye hain taake har member ko ehtram aur safety mile.</p>
-    </div>
-
-    <div class="grid grid-3 rules-grid">
-      <div class="rule do reveal"><b>✔ Ye karein</b>
-        <ul>
-          <li>Seekhne wale sawal poochein</li>
-          <li>Respectful lehja rakhein</li>
-          <li>Sirf authentic sources share karein</li>
-          <li>Admin ki guidance follow karein</li>
-        </ul>
-      </div>
-      <div class="rule dont reveal"><b>✘ Ye na karein</b>
-        <ul>
-          <li>Kisi ko profit guarantee na dein</li>
-          <li>Spam, ads ya referral links na bhejein</li>
-          <li>Kisi se paise ya OTP na maangein</li>
-          <li>Casino / betting / loan app promote na karein</li>
-        </ul>
-      </div>
-      <div class="rule safe reveal"><b>🔒 Safety First</b>
-        <ul>
-          <li>Admin kabhi fees nahi maangta</li>
-          <li>Apna password/OTP share na karein</li>
-          <li>Personal bank details public na karein</li>
-          <li>Problem ho to <a href="contact.html">contact</a> karein</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="section" id="faq">
-  <div class="wrap wrap-narrow">
-    <div class="section-head reveal">
-      <span class="eyebrow eyebrow-emerald">FAQ</span>
-      <h2>Aapke aam <span class="grad-text">sawalat</span>, saaf jawab</h2>
-      <p>Join karne se pehle yeh parh lena — koi shak baaki na rahe.</p>
-    </div>
-
-    <div class="faq-list">
-      <details class="faq reveal"><summary>Kya yeh Telegram channel sach mein free hai?</summary>
-        <p>Ji haan — 100% free. Koi membership fee, course fee, ya hidden charges nahi. Aap ko kisi bhi waqt koi payment karne ki zaroorat nahi.</p></details>
-
-      <details class="faq reveal"><summary>Kya aap buy/sell signals ya trading tips dete hain?</summary>
-        <p>Nahi. Yeh ek <b>educational community</b> hai. Hum concepts, method aur discipline sikhate hain — hum koi personal recommendation ya investment advice nahi dete, aur kisi call ki guarantee nahi dete.</p></details>
-
-      <details class="faq reveal"><summary>Join karne se mujhe paisa milega?</summary>
-        <p>Hum koi income ka waada nahi karte. Trading mein risk hota hai aur loss bhi ho sakta hai. Hamara maqsad sirf aapki samajh aur knowledge barhana hai.</p></details>
-
-      <details class="faq reveal"><summary>Content kis zubaan mein hota hai?</summary>
-        <p>Roman Urdu aur English mein — samajhne mein asaan rehta hai. Kuch posts mein Urdu script bhi use hoti hai.</p></details>
-
-      <details class="faq reveal"><summary>Kya yeh Shariah compliant / halal hai?</summary>
-        <p>Hum <b>ilm</b> par focus karte hain aur satta, casino, betting ya interest-based products ko promote nahi karte. Takay yeh saaf reh sake. Kisi deeni masle par fatwa sirf ek qualified aalim hi de sakta hai — hum aapko apne scholar se mashwara karne ki talqeen karte hain.</p></details>
-
-      <details class="faq reveal"><summary>Mujhe experience ya capital chahiye?</summary>
-        <p>Zaroorat nahi. Beginner roadmap zero se shuru hota hai, aur practice ke liye aap demo account bhi use kar sakte hain — bilkul free.</p></details>
-
-      <details class="faq reveal"><summary>Yeh sirf Muslim audience ke liye hai?</summary>
-        <p>Community sab ke liye khuli hai. Content Muslim learners ko samne rakh kar likha jata hai, lekin koi bhi shakhs — jo bhi uski background ho — fakhr ke saath seekh sakta hai.</p></details>
-
-      <details class="faq reveal"><summary>Kya mera data mehfooz rahega?</summary>
-        <p>Ji haan. Hum aapka personal data bechte ya kisi ko hawalay nahi karte. Tafseel ke liye <a href="privacy-policy.html">Privacy Policy</a> parhein.</p></details>
-
-      <details class="faq reveal"><summary>Join ke baad leave kaise karun?</summary>
-        <p>Telegram par "Leave Channel" par tap karein — bas. Hum aapko track nahi karte aur koi charge nahi lagta.</p></details>
-
-      <details class="faq reveal"><summary>Aap kya guarantee dete hain?</summary>
-        <p>Sirf ek: <b>imaandari se taleem</b>. Trading par wapsi ka koi guarantee duniya mein nahi de sakta — aur jo de, us se door rahein.</p></details>
-    </div>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"Is the Telegram channel free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The community is 100% free to join. There are no membership fees, course fees or hidden charges."}},
-        {"@type":"Question","name":"Do you provide trading tips or signals?","acceptedAnswer":{"@type":"Answer","text":"No. This is an educational community. We teach concepts, risk management and discipline. We do not provide investment advice, personalised recommendations or guaranteed calls."}},
-        {"@type":"Question","name":"Will joining make me money?","acceptedAnswer":{"@type":"Answer","text":"We make no income promises. Trading involves risk and losses are possible. Our purpose is learning and awareness only."}}
-      ]
-    }
-    </script>
-  </div>
-</section>
-
-<!-- ============ DATA & PRIVACY ============ -->
-<section class="section section-tint" id="data">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow eyebrow-sky">Your Data &amp; Information</span>
-      <h2>Aapki information, <span class="grad-text">aapke control</span> mein</h2>
-      <p>Hum transparency ko ahem samajhte hain — isliye saaf likha hai ki kya collect hota hai aur kyun.</p>
-    </div>
-    <div class="grid grid-3">
-      <div class="card card-flat reveal">
-        <div class="card-ico ico-emerald">📥</div>
-        <h3>Kya collect hota hai</h3>
-        <p>Jo aap khud dete hain (naam, email ya WhatsApp — jab aap form bharein), aur basic website stats (device, browser, country).</p>
-      </div>
-      <div class="card card-flat reveal">
-        <div class="card-ico ico-gold">🎯</div>
-        <h3>Kyun use hota hai</h3>
-        <p>Learning updates bhejne, aapke sawalon ka jawab dene, aur page ko behtar banane ke liye. Bas itna hi.</p>
-      </div>
-      <div class="card card-flat reveal">
-        <div class="card-ico ico-rose">🛑</div>
-        <h3>Kya nahi hota</h3>
-        <p>Aapka data becha nahi jata. Hum aapse password, OTP ya card/bank details kabhi nahi maangte.</p>
-      </div>
-    </div>
-    <p class="inline-note reveal">
-      Tafseel parhein: <a href="privacy-policy.html">Privacy Policy</a> ·
-      <a href="terms-conditions.html">Terms &amp; Conditions</a> ·
-      <a href="disclaimer.html">Disclaimer</a> ·
-      <a href="contact.html">Contact Us</a>
-    </p>
-  </div>
-</section>
-
-<!-- ============ FINAL CTA ============ -->
-<section class="cta-band">
-  <div class="wrap cta-inner reveal">
-    <span class="cta-ornament" aria-hidden="true">✦</span>
-    <h2>Chalein, aaj se <span class="grad-text-light">seekhna shuru</span> karein</h2>
-    <p>
-      Free Telegram community join karein — roz kuch naya seekhein, apni zubaan mein, bina kisi fee ke.
-    </p>
-    <div class="cta-actions">
-      <a class="btn btn-gold btn-lg" data-config-href="telegramUrl" href="https://t.me/YourChannelUsername" rel="noopener">
-        <svg class="ico-tg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 19 19.2c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.5.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.6 12.3l-4.4-1.4c-.9-.3-.9-.9.2-1.3l17-6.6c.8-.3 1.5.2 1.5 1.3z"/></svg>
-        Join Free on Telegram
-      </a>
-      <a class="btn btn-outline-light btn-lg" href="#faq">Read the FAQ first</a>
-    </div>
-    <p class="cta-fine">Free to join · Educational purpose only · No profit is guaranteed</p>
-  </div>
-</section>
-
+    <p class="copy">© <span id="yr">2026</span> <span data-cfg="channelName">HAJI MEMON SALMAN TRADER</span> · All rights reserved</p>
+  </footer>
 </main>
 
-<!-- ============ FOOTER ============ -->
-<footer class="site-footer">
-  <div class="wrap footer-grid">
-    <div class="footer-brand">
-      <a class="brand brand-footer" href="index.html">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 64 64" width="38" height="38">
-            <defs><linearGradient id="bf" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0E9F6E"/><stop offset="100%" stop-color="#0E7490"/></linearGradient></defs>
-            <rect width="64" height="64" rx="18" fill="url(#bf)"/>
-            <path d="M14 42l11-13 8 8 17-21" fill="none" stroke="#FFD86B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span class="brand-text"><strong data-config="channelName">HAJI MEMON SALMAN TRADER</strong><small>Free Trading Education Community</small></span>
-      </a>
-      <p class="footer-about">
-        Ek free Telegram learning community — jahan beginners trading basics, risk management aur market discipline
-        seekhte hain. Yeh page aur community sirf <b>taleem aur education</b> ke liye hai.
-      </p>
-      <p class="footer-contact">
-        📧 <a data-config-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-config="contactEmail">contact@hajimemonsalmantrader.com</span></a>
-      </p>
+<!-- ============ MODAL: PRIVACY POLICY ============ -->
+<div class="modal" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="mt-privacy" hidden>
+  <div class="modal-back" data-close></div>
+  <div class="modal-card">
+    <div class="modal-head">
+      <div><h3 id="mt-privacy">Privacy Policy</h3><small>Last updated: <span data-cfg="updated">4 October 2026</span></small></div>
+      <button class="x" type="button" data-close aria-label="Close privacy policy">✕</button>
     </div>
+    <div class="modal-body">
+      <div class="modal-note"><b>Short version:</b> We collect only what you voluntarily share, we use it only to send free educational updates, we never sell your data, and you can ask us to delete it anytime.</div>
 
-    <div class="footer-col">
-      <h4>Quick Links</h4>
+      <h4>1. Who we are</h4>
+      <p>This website and the free Telegram community operated under the name <b data-cfg="channelName">HAJI MEMON SALMAN TRADER</b> ("we", "us") provide <b>free educational content</b> about trading basics, risk management and market discipline. We are not a broker, exchange, investment adviser or financial institution.</p>
+
+      <h4>2. Information you give us</h4>
       <ul>
-        <li><a href="index.html#learn">What You Learn</a></li>
-        <li><a href="index.html#why">Why Join</a></li>
-        <li><a href="index.html#rules">Community Rules</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
-        <li><a data-config-href="telegramUrl" href="https://t.me/YourChannelUsername" rel="noopener">Join Telegram</a></li>
+        <li>Your name, email address, phone or WhatsApp number — when you submit a form or a Meta (Facebook/Instagram) lead form.</li>
+        <li>Your message or question to us.</li>
+        <li>Optional preferences you share, such as language (English / Roman Urdu) or experience level.</li>
       </ul>
-    </div>
 
-    <div class="footer-col">
-      <h4>Legal &amp; Policies</h4>
+      <h4>3. Information collected automatically</h4>
       <ul>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
-        <li><a href="disclaimer.html">Disclaimer</a></li>
-        <li><a href="privacy-policy.html#children">Children's Privacy</a></li>
-        <li><a href="contact.html">Contact &amp; Grievance</a></li>
+        <li>Device and browser details, operating system, language, and approximate location (country or city level).</li>
+        <li>Usage data such as pages viewed, referring link and button clicks (for example, whether the "Join Free" button was clicked).</li>
+        <li>Technical logs including IP address, recorded by our hosting provider for security and spam prevention.</li>
       </ul>
-    </div>
 
-    <div class="footer-col footer-col-note">
+      <h4>4. What we never ask for</h4>
+      <p>We never ask for and strongly advise you never to share: bank account or card details, CNIC/ID documents, brokerage passwords, wallet recovery phrases, OTP codes, or any payment. Our community is <b>free</b> — nobody is authorised to request money on our behalf.</p>
+
+      <h4>5. How we use your information</h4>
+      <ul>
+        <li>To send free educational updates and community announcements (only if you opted in).</li>
+        <li>To answer your questions and provide learning support.</li>
+        <li>To understand which content is useful and improve this page.</li>
+        <li>To measure advertising performance in an aggregated way.</li>
+        <li>To keep the community safe from spam, fraud and impersonation.</li>
+        <li>To comply with applicable law.</li>
+      </ul>
+      <p><b>We do not sell, rent or trade your personal information to anyone.</b></p>
+
+      <h4>6. Legal basis</h4>
+      <p>Where required by law, we process data based on: your <b>consent</b> (forms, updates, cookies); our <b>legitimate interests</b> (keeping the site secure, functional and spam-free); and <b>legal obligations</b>.</p>
+
+      <h4>7. Cookies and tracking</h4>
+      <p>We use essential cookies or local storage to keep the page working, and analytics/measurement tools to count visits and ad clicks. If you arrive from a Meta advertisement, measurement tools may record anonymous events such as a page view or button click. You can block or delete cookies in your browser settings at any time — this does not stop you from joining the free community.</p>
+      <p>To control how Meta uses your data for advertising, visit Meta's Ad Preferences or Privacy Center.</p>
+
+      <h4>8. Meta / Facebook data</h4>
+      <p>If you complete a lead form on Facebook or Instagram, Meta shares the information you entered with us. We use it <b>only</b> to send the free community link and educational updates, never for unrelated marketing, and never sold or rented. This site and community are <b>not part of, endorsed by or affiliated with Meta Platforms, Inc.</b></p>
+
+      <h4>9. Sharing and disclosure</h4>
+      <ul>
+        <li><b>Service providers</b> — trusted hosting, email and analytics providers acting on our instructions under confidentiality obligations.</li>
+        <li><b>Legal requirements</b> — where required by valid legal process or applicable law, or to protect members' safety.</li>
+      </ul>
+      <p>We do not share your data with other members, advertisers or data brokers.</p>
+
+      <h4>10. How long we keep data</h4>
+      <p>Only as long as needed — typically while you remain subscribed, or up to 24 months of inactivity. Server logs are kept briefly for security. After that, data is deleted or anonymised.</p>
+
+      <h4>11. Your rights</h4>
+      <ul>
+        <li>Access the personal information we hold about you.</li>
+        <li>Correct inaccurate or incomplete information.</li>
+        <li>Delete your information or withdraw consent at any time.</li>
+        <li>Opt out of messages and object to certain processing.</li>
+        <li>Request a portable copy of your data.</li>
+        <li>Complain to your local data protection authority.</li>
+      </ul>
+      <p>Email <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a> to exercise any right. We reply within 30 days and never charge a fee.</p>
+
+      <h4>12. Security</h4>
+      <p>We use reasonable technical and organisational safeguards, including HTTPS encryption, restricted access and minimal collection. No method of internet transmission or storage is 100% secure, so we cannot promise absolute security. Please never share passwords or OTP codes with anyone.</p>
+
+      <h4>13. Children's privacy</h4>
+      <p>This page and community are intended for people aged <b>18 and older</b> and are not directed to children. We do not knowingly collect data from children. If you believe a child has provided us information, contact us and we will delete it promptly.</p>
+
+      <h4>14. International transfers</h4>
+      <p>Our providers may store data on servers in other countries, using appropriate safeguards such as standard contractual clauses and provider security commitments.</p>
+
+      <h4>15. Third-party links</h4>
+      <p>We link to third-party platforms such as Telegram. We do not control them and are not responsible for their privacy practices. We are not affiliated with, endorsed by or sponsored by Telegram Inc.</p>
+
+      <h4>16. Changes to this policy</h4>
+      <p>We may update this policy from time to time. Changes appear here with a new "Last updated" date. Continued use of the page means you accept the revised policy.</p>
+
+      <h4>17. Contact and grievance officer</h4>
+      <p>Data Contact / Grievance Officer — <span data-cfg="channelName">HAJI MEMON SALMAN TRADER</span><br />
+      Email: <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a><br />
+      We aim to acknowledge every privacy request within 48 hours and resolve within 30 days.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="mbtn" type="button" data-close>Close</button>
+      <a class="mbtn join" data-cfg-href="telegramUrl" href="https://t.me/YourChannelUsername" target="_blank" rel="noopener nofollow">Join Free on Telegram</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: TERMS & CONDITIONS ============ -->
+<div class="modal" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="mt-terms" hidden>
+  <div class="modal-back" data-close></div>
+  <div class="modal-card">
+    <div class="modal-head">
+      <div><h3 id="mt-terms">Terms &amp; Conditions</h3><small>Last updated: <span data-cfg="updated">4 October 2026</span></small></div>
+      <button class="x" type="button" data-close aria-label="Close terms and conditions">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-note">This is a <b>free educational community</b>. We teach; we do not give investment advice, trading signals or profit guarantees. Members must be <b>18+</b> and never send money to anyone claiming to represent us.</div>
+
+      <h4>1. Agreement</h4>
+      <p>By using this website, submitting a form, or joining our free Telegram community operated under the name <b data-cfg="channelName">HAJI MEMON SALMAN TRADER</b> ("we", "us"), you agree to these Terms. If you do not agree, please do not use the page or the community.</p>
+
+      <h4>2. What we provide</h4>
+      <ul>
+        <li>Free beginner-friendly lessons on trading and market basics.</li>
+        <li>Educational material on risk management, capital protection and market psychology.</li>
+        <li>General explanations of charts, patterns and terminology.</li>
+        <li>Community announcements and occasional question-and-answer discussions.</li>
+      </ul>
+      <p>Content is shared in English and Roman Urdu. Since it is free, we may change or pause any part of it at any time.</p>
+
+      <h4>3. Eligibility (18+)</h4>
+      <p>You must be at least <b>18 years old</b>, legally able to enter into an agreement, and not barred by the laws applicable to you. This community is not intended for children.</p>
+
+      <h4>4. No financial or investment advice</h4>
+      <p>All content is provided for <b>general information, learning and education only</b>. Nothing we share is investment, financial, trading, tax or legal advice, a recommendation, or an offer to buy or sell any security, currency, commodity, token or derivative.</p>
+      <ul>
+        <li>We do not provide buy/sell signals, trade calls or portfolio management.</li>
+        <li>We do not promise or guarantee any profit, income or result.</li>
+        <li>We are not your adviser, and we do not know your financial situation.</li>
+        <li>We do not issue religious rulings. For religious questions, consult a qualified scholar.</li>
+      </ul>
+      <p>Every decision you take based on what you learn is <b>your own responsibility</b>. You may lose money.</p>
+
+      <h4>5. Free community — no payments</h4>
+      <ul>
+        <li>Membership and all content are <b>free</b>. No membership fee, course fee, signal fee, subscription or hidden charge.</li>
+        <li>We will <b>never</b> ask for payments, bank or card details, OTP codes, passwords or wallet recovery phrases. Anyone asking for these is <b>not</b> us.</li>
+        <li>If someone claims to represent us and demands money or logins, stop, do not pay, and report it to us.</li>
+      </ul>
+
+      <h4>6. Acceptable use</h4>
+      <p>You agree not to post or send spam, ads, referral links or chain messages; solicit money or personal data from other members; impersonate us or anyone else; promote gambling, betting, casinos, lotteries, fraudulent loan apps or any illegal activity; harass, threaten, abuse or discriminate against any person; post hateful or obscene content; infringe anyone's rights; attempt to hack, scrape or disrupt the page or community; or give false information.</p>
+
+      <h4>7. Community rules and moderation</h4>
+      <p>We aim to keep a respectful, family-friendly and scam-free environment. We may remove any post or message that breaches these Terms, warn or remove members, and report suspected fraud to the relevant platform or authorities. Participation is a privilege, not a right.</p>
+
+      <h4>8. Intellectual property</h4>
+      <p>Our name, branding, layout and written educational material belong to us or are used with permission. You may read, print and share our educational posts for <b>personal, non-commercial learning</b>, keeping our name attached. You may not copy, resell, re-brand or republish our content as your own, or use it to sell any course, signal service or product.</p>
+
+      <h4>9. Content you submit</h4>
+      <p>You are responsible for anything you post or send, and you confirm you have the right to share it. By sending us a question, you allow us to answer it publicly in a general educational way. Please do not post personal, financial or family private information about yourself or others.</p>
+
+      <h4>10. Third-party platforms</h4>
+      <p>Our community is hosted on <b>Telegram</b> and we may advertise through <b>Meta</b> (Facebook/Instagram). Their own terms and policies apply to your use of those platforms. <b>We are not affiliated with, sponsored by, endorsed by or administered by Meta Platforms, Inc., Telegram Inc., or any broker or exchange.</b></p>
+
+      <h4>11. Disclaimer of warranties</h4>
+      <p>The page and community are provided <b>"as is"</b> and <b>"as available"</b>, without warranties of any kind. To the maximum extent permitted by law, we disclaim all implied warranties, including merchantability, fitness for a particular purpose, accuracy and non-infringement. We do not warrant uninterrupted, error-free or secure operation.</p>
+
+      <h4>12. Limitation of liability</h4>
+      <p>To the maximum extent permitted by law, we and our admins and volunteers are not liable for any indirect, incidental, special, consequential or punitive damages, or for any trading losses, lost profits, lost data or missed opportunity arising from your use of the page or community, any financial decision you make, the conduct of any third party or impostor, or unauthorised access to your transmissions. Because the community is provided <b>free of charge</b>, our total aggregate liability for any claim shall not exceed <b>zero</b> — the amount you have paid us, which is nothing.</p>
+
+      <h4>13. Indemnification</h4>
+      <p>You agree to indemnify and hold harmless us and our admins and volunteers from any claims, damages, losses and costs arising from your breach of these Terms, your misuse of the page or community, your content, or your violation of any law or third-party right.</p>
+
+      <h4>14. Leaving and termination</h4>
+      <p>You may leave the community at any time by tapping "Leave Channel" in Telegram — no reason needed, no fee. We may suspend or remove access if these Terms are breached, or to protect members' safety.</p>
+
+      <h4>15. Governing law</h4>
+      <p>These Terms are governed by the laws applicable at our place of operation. Please contact us first so we can try to resolve any dispute amicably in good faith, before approaching the competent courts.</p>
+
+      <h4>16. Changes</h4>
+      <p>We may update these Terms. The revised version appears here with a new "Last updated" date. Continued use of the page or community means you accept the revised Terms.</p>
+
+      <h4>17. Contact</h4>
+      <p>Questions about these Terms: <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a></p>
+      <p>By joining our Telegram community you confirm you are <b>18 or older</b>, you understand this is an <b>educational community</b>, and you accept that <b>trading involves risk and no profit is guaranteed</b>.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="mbtn" type="button" data-close>Close</button>
+      <a class="mbtn join" data-cfg-href="telegramUrl" href="https://t.me/YourChannelUsername" target="_blank" rel="noopener nofollow">Join Free on Telegram</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: DISCLAIMER ============ -->
+<div class="modal" id="modal-disclaimer" role="dialog" aria-modal="true" aria-labelledby="mt-disclaimer" hidden>
+  <div class="modal-back" data-close></div>
+  <div class="modal-card">
+    <div class="modal-head">
+      <div><h3 id="mt-disclaimer">Disclaimer</h3><small>Last updated: <span data-cfg="updated">4 October 2026</span></small></div>
+      <button class="x" type="button" data-close aria-label="Close disclaimer">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-note warn"><b>Read this first:</b> everything we share is for <b>learning and education only</b>. It is not investment advice. We do not give buy/sell signals and we do not guarantee any profit. Trading carries a real risk of losing money.</div>
+
+      <h4>1. Educational purpose only</h4>
+      <p><b data-cfg="channelName">HAJI MEMON SALMAN TRADER</b> is a <b>free educational community</b> that helps beginners understand general concepts of markets, trading, risk management and discipline. We are a study group — not a broker, exchange, fund, research house, advisory firm or employer. We do not sell courses, subscriptions, software, signals or mentorship packages. Anyone selling these in our name is not us.</p>
+
+      <h4>2. No investment advice</h4>
+      <p>Nothing on this page, in our Telegram community, or in any message, image or video we publish constitutes investment, financial, trading, tax or legal advice; a recommendation, endorsement or solicitation to buy or sell any financial product; a personalised recommendation based on your circumstances; a signal, call or tip; or an offer of any service requiring a licence. We do not know your financial situation and we are not your adviser.</p>
+
+      <h4>3. Risk warning</h4>
+      <ul>
+        <li>You can lose some or all of your capital. With leveraged or derivative products you can lose more than you deposit.</li>
+        <li>Past performance, charts and examples are never a reliable indicator of future results.</li>
+        <li>Markets can move quickly against you due to news, volatility, liquidity gaps or technical failures.</li>
+        <li>Only risk money you can genuinely afford to lose, and never borrow money to trade.</li>
+        <li>"Guaranteed returns" or "risk-free profit" claims are always a warning sign.</li>
+      </ul>
+
+      <h4>4. No guarantee of results</h4>
+      <p>We make no promise and give no guarantee of profit, income, accuracy or any specific outcome. Learning about markets improves understanding — it does not remove risk. Anyone who claims otherwise is misleading you, and we ask you to report them to us.</p>
+
+      <h4>5. No affiliation or endorsement</h4>
+      <p>This page and community are <b>not affiliated with, authorised by, endorsed by or sponsored by</b> Meta Platforms, Inc. (Facebook, Instagram, WhatsApp) — we may simply advertise on those platforms; Telegram Inc. — we simply host our free channel there; any broker, exchange, bank or payment processor; or any religious institution or scholar.</p>
+
+      <h4>6. Third-party content</h4>
+      <p>We may link to free public resources or mention third-party platforms. We do not control them and are not responsible for their content, accuracy, security, terms or practices. A link is not an endorsement.</p>
+
+      <h4>7. Testimonials and examples</h4>
+      <p>If a member comment or chart example is ever shown, it is illustrative only. It is not a typical outcome and not a promise that you will achieve any result. Charts and historical examples are teaching tools, not forecasts.</p>
+
+      <h4>8. Your responsibility</h4>
+      <p>You are solely responsible for your own decisions, trades and their outcomes; for verifying any information before relying on it; and for complying with the laws and tax rules that apply to you. We are not responsible for losses caused by your use of our educational content, or by the actions of any third party or impostor.</p>
+
+      <h4>9. Religious note</h4>
+      <p>Our content is written with Muslim learners in mind, in a respectful and ethical manner, and we do not promote gambling, betting, casinos, lotteries, interest-based lending or deceptive financial schemes. However, <b>we do not issue fatwas or religious rulings</b> and we do not declare any specific market product halal or haram. Interpretations differ between scholars. For any religious question, please consult a qualified scholar you trust.</p>
+
+      <h4>10. Age restriction</h4>
+      <p>This page and community are intended for adults aged <b>18 or older</b> and are not designed for children. Parents and guardians are requested to supervise internet use at home.</p>
+
+      <h4>11. Contact</h4>
+      <p>Found something misleading, or something claiming to be us? Please report it: <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a></p>
+      <p><b>Bottom line:</b> we teach for free, we tell the truth about risk, and we never promise profits.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="mbtn" type="button" data-close>Close</button>
+      <a class="mbtn join" data-cfg-href="telegramUrl" href="https://t.me/YourChannelUsername" target="_blank" rel="noopener nofollow">Join Free on Telegram</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: CONTACT & GRIEVANCE ============ -->
+<div class="modal" id="modal-contact" role="dialog" aria-modal="true" aria-labelledby="mt-contact" hidden>
+  <div class="modal-back" data-close></div>
+  <div class="modal-card">
+    <div class="modal-head">
+      <div><h3 id="mt-contact">Contact &amp; Grievance</h3><small>We usually reply within 1–2 working days</small></div>
+      <button class="x" type="button" data-close aria-label="Close contact information">✕</button>
+    </div>
+    <div class="modal-body">
+      <h4>How can we help?</h4>
+      <div class="contact-cards">
+        <div class="ccard">
+          <b>📚 Learning questions</b>
+          <p>The best place for learning doubts is the Telegram community — post your question there.</p>
+        </div>
+        <div class="ccard">
+          <b>✉️ General &amp; legal enquiries</b>
+          <p class="mono-sm"><a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a></p>
+        </div>
+        <div class="ccard">
+          <b>🔒 Privacy / data requests</b>
+          <p>Ask us to access, correct or delete your data. We reply within 30 days, usually much sooner.</p>
+        </div>
+        <div class="ccard">
+          <b>🚨 Report impersonation or fraud</b>
+          <p>If anyone demands money, OTP or passwords in our name, report it immediately with screenshots.</p>
+        </div>
+      </div>
+
+      <h4>Grievance officer / nodal contact</h4>
+      <ul>
+        <li><b>Designation:</b> Community Admin — <span data-cfg="channelName">HAJI MEMON SALMAN TRADER</span></li>
+        <li><b>Email:</b> <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a></li>
+        <li><b>Acknowledgement:</b> within 48 hours</li>
+        <li><b>Resolution:</b> attempted within 15 days</li>
+      </ul>
+
+      <h4>Safety notice</h4>
+      <div class="modal-note warn">
+        Our community is <b>100% free</b>. We will never ask you for money, bank details, OTP codes or passwords.
+        Only the Telegram link on this page is official. If in doubt, email us first.
+      </div>
+
       <h4>Important</h4>
-      <p>
-        Yeh page Facebook / Meta ya Telegram Inc. ka hissa nahi hai aur unke dwara endorsed nahi hai.
-        Koi bhi trader, course ya platform kisi bhi nafa ki guarantee nahi de sakta.
-      </p>
-      <p class="age-note">🔞 <b>18+ only.</b> Yeh community bachon ke liye nahi hai.</p>
+      <p>This page is for <b>education only</b>. It is not a part of, or endorsed by, Meta Platforms or Telegram. We do not provide investment advice and no profit is guaranteed. 18+ only.</p>
     </div>
-  </div>
-
-  <div class="wrap footer-bottom">
-    <p>© <span id="year">2026</span> <span data-config="channelName">HAJI MEMON SALMAN TRADER</span>. All rights reserved.</p>
-    <p class="footer-legal-line">
-      Educational content only · Not investment advice · Trading involves risk of loss
-    </p>
-  </div>
-</footer>
-
-<!-- Mobile sticky CTA -->
-<div class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <a class="btn btn-primary btn-block" data-config-href="telegramUrl" href="https://t.me/YourChannelUsername" rel="noopener">
-    <svg class="ico-tg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 19 19.2c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.5.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.6 12.3l-4.4-1.4c-.9-.3-.9-.9.2-1.3l17-6.6c.8-.3 1.5.2 1.5 1.3z"/></svg>
-    Join Free Telegram Channel
-  </a>
-</div>
-
-<!-- Cookie / consent banner -->
-<div class="cookie" id="cookieBar" role="dialog" aria-live="polite" aria-label="Cookie notice" hidden>
-  <div class="cookie-inner">
-    <p>
-      🍪 Hum basic cookies aur analytics use karte hain taake website behtar bana sakein. Aap "Accept" ya "Decline" chun sakte hain.
-      Detail: <a href="privacy-policy.html#cookies">Cookie Policy</a>.
-    </p>
-    <div class="cookie-actions">
-      <button class="btn btn-ghost btn-sm" id="cookieDecline" type="button">Decline</button>
-      <button class="btn btn-primary btn-sm" id="cookieAccept" type="button">Accept</button>
+    <div class="modal-foot">
+      <button class="mbtn" type="button" data-close>Close</button>
+      <a class="mbtn join" data-cfg-href="telegramUrl" href="https://t.me/YourChannelUsername" target="_blank" rel="noopener nofollow">Join Free on Telegram</a>
     </div>
   </div>
 </div>
 
-<script src="assets/js/config.js"></script>
-<script src="assets/js/main.js"></script>
+<script>
+/* ============================================================
+   ⚙️  CONFIG — SIRF YEH 5 LINES BADLEIN
+   ============================================================ */
+var CONFIG = {
+  channelName:     "HAJI MEMON SALMAN TRADER",
+
+  // 🔴 1) Apna Telegram channel link yahan lagayein:
+  telegramUrl:     "https://t.me/YourChannelUsername",
+
+  // 🔴 2) Contact email (Privacy / Contact mein dikhta hai):
+  contactEmail:    "contact@hajimemonsalmantrader.com",
+
+  // 🖼️ 3) Profile image link yahan paste karein (imgbb / GitHub raw link).
+  //       Khali chhodein to gradient monogram (HM) dikhega. Example:
+  //       "https://i.ibb.co/xxxxxxx/memon-bhai.jpg"
+  profileImageUrl: "",
+
+  // 📊 4) Meta (Facebook) Pixel ID — sirf number, e.g. "1234567890123456" (khali = off)
+  metaPixelId:     "",
+
+  // 📅 5) Aakhri update ki date (policies mein dikhti hai)
+  updated:         "4 October 2026"
+};
+
+(function () {
+  "use strict";
+  var $  = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var PLACEHOLDER = /YourChannelUsername/i;
+
+  /* ---------- 1. Config injection ---------- */
+  function applyConfig() {
+    $$("[data-cfg]").forEach(function (el) {
+      var key = el.getAttribute("data-cfg");
+      if (CONFIG[key] != null && CONFIG[key] !== "") el.textContent = CONFIG[key];
+    });
+    $$("[data-cfg-href]").forEach(function (el) {
+      var key = el.getAttribute("data-cfg-href");
+      if (key === "mailtoUrl") el.setAttribute("href", "mailto:" + CONFIG.contactEmail);
+      else if (CONFIG[key]) { el.setAttribute("href", CONFIG[key]); el.setAttribute("target", "_blank"); el.setAttribute("rel", "noopener nofollow"); }
+    });
+
+    // handle: telegram link se @username nikal kar dikhayein
+    var h = $("#handle");
+    if (h) {
+      var m = /t\.me\/([A-Za-z0-9_]+)/.exec(CONFIG.telegramUrl || "");
+      h.textContent = (m && !PLACEHOLDER.test(CONFIG.telegramUrl))
+        ? "@" + m[1] + " · Free Educational Community"
+        : "Free Educational Community · Learning only";
+    }
+
+    // monogram: channel name ke pehle 2 lafzon se initials
+    var mono = $("#mono");
+    if (mono) {
+      var w = CONFIG.channelName.trim().split(/\s+/);
+      mono.textContent = (w[0][0] + (w[1] ? w[1][0] : "")).toUpperCase();
+    }
+
+    var y = $("#yr"); if (y) y.textContent = new Date().getFullYear();
+
+    // profile photo
+    if (CONFIG.profileImageUrl) {
+      var img = $("#avatar"), ring = $("#ring");
+      img.addEventListener("load",  function () { ring.classList.add("has-photo"); });
+      img.addEventListener("error", function () { ring.classList.remove("has-photo"); });
+      img.src = CONFIG.profileImageUrl;
+    }
+
+    if (PLACEHOLDER.test(CONFIG.telegramUrl)) {
+      console.warn("[Setup needed] CONFIG.telegramUrl mein apna Telegram link lagayein (index.html ke <script> mein).");
+    }
+  }
+
+  /* ---------- 2. Meta Pixel + Lead tracking ---------- */
+  function loadPixel() {
+    if (!CONFIG.metaPixelId || window.fbq) return;
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = [];
+      t = b.createElement(e); t.async = !0; t.src = v;
+      s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    window.fbq("init", CONFIG.metaPixelId);
+    window.fbq("track", "PageView");
+  }
+
+  function setupLeadTracking() {
+    document.addEventListener("click", function (ev) {
+      var el = ev.target.closest ? ev.target.closest("[data-cfg-href='telegramUrl']") : null;
+      if (!el) return;
+      if (typeof window.fbq === "function") window.fbq("track", "Lead", { content_name: "Telegram Join" });
+    });
+  }
+
+  /* ---------- 3. Legal modals ---------- */
+  var lastFocus = null;
+
+  function openModal(id) {
+    var m = document.getElementById("modal-" + id);
+    if (!m) return;
+    lastFocus = document.activeElement;
+    m.hidden = false;
+    document.documentElement.style.overflow = "hidden"; document.body.style.overflow = "hidden";
+    var x = $(".x", m); if (x) x.focus();
+  }
+
+  function closeModal(m) {
+    m.hidden = true;
+    document.documentElement.style.overflow = ""; document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  function setupModals() {
+    $$("[data-open]").forEach(function (btn) {
+      btn.addEventListener("click", function () { openModal(btn.getAttribute("data-open")); });
+    });
+    $$(".modal").forEach(function (m) {
+      m.addEventListener("click", function (ev) {
+        if (ev.target.closest && ev.target.closest("[data-close]")) closeModal(m);
+      });
+    });
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key !== "Escape") return;
+      var open = $$(".modal").filter(function (m) { return !m.hidden; })[0];
+      if (open) closeModal(open);
+    });
+  }
+
+  /* ---------- init ---------- */
+  function init() {
+    applyConfig();
+    loadPixel();
+    setupLeadTracking();
+    setupModals();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"HAJI MEMON SALMAN TRADER",
+"description":"Free educational Telegram community for trading basics, risk management and market discipline. Educational purpose only.",
+"sameAs":["https://t.me/YourChannelUsername"],
+"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"contact@hajimemonsalmantrader.com","availableLanguage":["English","Urdu","Hindi"]}}
+</script>
 </body>
 </html>
