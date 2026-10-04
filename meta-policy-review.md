@@ -274,6 +274,69 @@ Naya button add hone ke baad fit ladder refresh kiya:
 `height < 820px` → chips hide · `< 760px` → badges hide + chhoti avatar · `< 600px` → chhota h1/fine ·
 `< 470px` (landscape) → fine + subtitle hide. Chhote se bade har phone par ek hi screen mein fit.
 
+---
+
+## 🟢 ROUND 4 — Bug hunt: 8 mistakes mile, sab fix
+
+Aapne bataya ki **ADMIN badge photo ke peeche chala gaya** — dass hi **asli z-index bug** tha.
+Usi bahaane poore page ka layering + quality audit chalaya, **8 mistakes** nikli. Sab theek kar di.
+
+### 🔴 CRITICAL
+
+**BUG 1 — ADMIN badge profile photo ke peeche chhup gaya**
+- **Wajah:** `.verified` (badge) ka `z-index: auto` tha, lekin `.ring` ko `z-index: 1` diya gaya tha.
+  CSS mein z-index 1 wala element `auto` wale se **upar** paint hota hai — is liye ring + photo
+  badge ke upar aa gaye.
+- **Fix:** badge par `z-index: 3` (ring = 1, photo layer = 2 → badge sab se upar).
+- **Note:** aisa bug har baar aata hai jab layers add hoti hain — ab har layer par z-index likha hua hai.
+
+### 🟠 MEDIUM
+
+**BUG 2 — Photo ki quality par asar (aliasing)**
+- **Wajah:** photo par `image-rendering: -webkit-optimize-contrast` laga tha — yeh property
+  **pixel art / icons** ke liye hoti hai. Asli photo ko browser chhoti size par sharp dikhane ke liye
+  yeh ulta rough/bhara banata hai.
+- **Fix:** property hata di. Ab browser natural smooth rendering use karta hai → photo saaf aur sharp.
+  Sharpen ke liye iske saath `translateZ(0)` (GPU layer) rehta hai, aur koi blur/filter nahi.
+- **Bonus:** photo ka crop ab variable se control hota hai — `:root` mein `--avatar-pos:center 26%`.
+  Face upar/bottom lag raha ho to bas yeh value badal dein.
+
+**BUG 3 — Desktop card se content bahar nikal sakta tha**
+- **Wajah:** desktop panel `88vh` tha, aur uske andar hi saare fit rules `vh` se calculate hote hain.
+  Bada button + agency button add hone ke baad chhoti-screen laptops par content card ke bahar
+  nikal sakta tha (kata hua dikh sakta tha).
+- **Fix:** panel `93vh` (max 950px) + **hidden-scrollbar safety net** — agar kisi device par jagah
+  kam pade to content scroll ho jayega lekin scrollbar dikhega nahi, aur content **kabhi katega nahi**.
+
+### 🟡 MINOR (par quality ke liye zaroori)
+
+**BUG 4 — Heading hierarchy tooti hui:** page mein `h1` ke baad seedha `h3` aa raha tha (h2 skip),
+aur modals mein `h4`. Fix: ab `h1 → h2 → h3` clean sequence (SEO + screen readers dono ke liye).
+
+**BUG 5 — Skip link nahi tha:** keyboard users ko "Join" tak pahunchne ke liye har cheez se tab karna
+padta. Ab "Skip to main content" link hai (focus par dikhta hai).
+
+**BUG 6 — Kuch text 8–9px tak chhota ho sakta tha:** `.badge`, `.chip`, ADMIN badge, 18+ pill aur
+agency credit ke minimum size badha diye — ab sab ~10px+ rehte hain (chhoti screens par bhi padhne layak).
+
+**BUG 7 — Duplicate `prefers-reduced-motion` block:** ek hi kaam karne wale do blocks the → ek hata diya.
+
+**BUG 8 — Agency button par screen-reader label nahi tha:** ab `aria-label` hai —
+*"Contact Adstele Agency on Telegram — advertising and promotion enquiries only"*.
+
+### ✅ Jo cheezein already sahi thi (audit mein pass hui)
+
+- Photo layers par **koi filter / hue-rotate / image-rendering nahi** (colours original rehte hain)
+- Koi **duplicate id** nahi · JS ke saare `id` HTML mein maujood · saare `data-cfg` keys CONFIG mein maujood
+- CSS balanced, koi **dead class** nahi (purane `.hero`, `.card`, `.grid` etc. sab saaf)
+- 4 modals par `role="dialog"` + `aria-modal` + focus trap ✅
+- Z-index scale saaf: `0` background → `1` ring → `2` photo → `3` badge → `120` modals → `200` skip link
+
+### 📸 Photo ke liye ek bonus tip
+imgbb par jo image hai woh **full-size phone photo** hai (bhaari). Usse **400×400 px** wali chhoti
+copy bana kar upload karein aur woh link lagayein — page **2–3x tez** load hoga (Meta landing-page
+speed score ke liye bhi behtar). Quality 112px ke circle par same dikhegi.
+
 ## 🚦 Publish karne se pehle — 5 step
 
 1. `CONFIG.telegramUrl` = **asli channel link** (B1)

@@ -47,6 +47,8 @@
   --line:rgba(17,32,26,.10);
   --font-h:"Outfit",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-b:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  /* profile photo ka crop — face frame mein lane ke liye (yahan badlein) */
+  --avatar-pos:center 26%;
   --radius:999px;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -75,6 +77,12 @@ body::before{
   mask-image:radial-gradient(130% 78% at 50% 0%,#000 12%,transparent 76%);
 }
 img{display:block;max-width:100%}
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--ink);color:#fff;font-weight:700;font-size:.85rem;
+  padding:10px 16px;border-radius:0 0 12px 0;text-decoration:none;
+}
+.skip-link:focus{left:0}
 a{color:var(--em-d)}
 
 /* ---------- one-screen shell ---------- */
@@ -91,13 +99,18 @@ a{color:var(--em-d)}
   body{align-items:center;padding:22px}
   .screen{
     min-height:0;
-    height:min(88vh,880px);height:min(88dvh,880px);
+    height:min(93vh,950px);height:min(93dvh,950px);
     border:1px solid var(--line);border-radius:34px;
     background:rgba(255,255,255,.66);
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
     box-shadow:0 34px 90px rgba(17,32,26,.13);
     padding:26px 34px;
+    /* safety net: agar kisi laptop par jagah kam pade, to content kat na jaye —
+       scroll hota hai lekin scrollbar dikhta nahi */
+    overflow-y:auto;overscroll-behavior:contain;
+    scrollbar-width:none;
   }
+  .screen::-webkit-scrollbar{width:0;height:0}
 }
 
 /* ---------- top bar ---------- */
@@ -109,7 +122,7 @@ a{color:var(--em-d)}
   font-size:clamp(.66rem,1.5vh,.8rem);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 .pill-18{
-  flex:0 0 auto;font-weight:800;font-size:clamp(.6rem,1.35vh,.7rem);letter-spacing:.04em;
+  flex:0 0 auto;font-weight:800;font-size:clamp(.65rem,1.4vh,.73rem);letter-spacing:.04em;
   color:#8A5E06;background:#FDF1D6;border:1px solid rgba(217,155,24,.32);
   border-radius:var(--radius);padding:.22rem .55rem;white-space:nowrap;
 }
@@ -174,19 +187,19 @@ a{color:var(--em-d)}
 }
 .ring img{
   position:absolute;inset:0;z-index:2;width:100%;height:100%;
-  object-fit:cover;object-position:center 26%;border-radius:50%;
-  -webkit-image-rendering:-webkit-optimize-contrast;image-rendering:-webkit-optimize-contrast;
+  object-fit:cover;object-position:var(--avatar-pos,center 26%);border-radius:50%;
+  /* koi filter / hue-rotate / image-rendering override nahi —
+     photo browser ke natural smooth rendering se hi sharp dikhti hai */
   transform:translateZ(0);backface-visibility:hidden;
 }
-@media (prefers-reduced-motion:reduce){
-  .ring::before,.ring::after,.avatar-wrap::before{animation:none !important}
-}
+/* ADMIN badge — z-index 3 zaroori hai:
+   .ring = 1, .ring-inner = 2 → badge 3 (warna photo ke peeche chhup jata hai) */
 .verified{
-  position:absolute;right:-8px;bottom:-3px;
+  position:absolute;right:-7px;bottom:-3px;z-index:3;
   border-radius:999px;padding:3px 8px;
   background:linear-gradient(135deg,#0E9F6E,#0E7490);color:#fff;
-  font-family:var(--font-h);font-size:clamp(.5rem,1.05vh,.6rem);
-  font-weight:900;letter-spacing:.1em;line-height:1;
+  font-family:var(--font-h);font-size:clamp(.56rem,1.05vh,.6rem);
+  font-weight:900;letter-spacing:.08em;line-height:1;
   border:2px solid #fff;box-shadow:0 5px 14px rgba(14,116,144,.35);
   white-space:nowrap;
 }
@@ -196,12 +209,12 @@ a{color:var(--em-d)}
   background:linear-gradient(95deg,#05724E 0%,#0E7490 45%,#7C3AED 100%);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
 }
-.handle{margin:0;font-weight:600;color:var(--muted);font-size:clamp(.68rem,1.45vh,.82rem)}
+.handle{margin:0;font-weight:600;color:var(--muted);font-size:clamp(.74rem,1.5vh,.86rem)}
 .badges{display:flex;flex-wrap:wrap;justify-content:center;gap:5px}
 .badge{
   background:#fff;border:1px solid var(--line);border-radius:var(--radius);
   padding:.24rem .58rem;font-weight:700;color:var(--ink2);
-  font-size:clamp(.62rem,1.35vh,.74rem);box-shadow:0 2px 8px rgba(17,32,26,.05);
+  font-size:clamp(.67rem,1.4vh,.76rem);box-shadow:0 2px 8px rgba(17,32,26,.05);
 }
 
 h1.headline{
@@ -229,7 +242,7 @@ h1.headline{
   display:inline-flex;align-items:center;gap:5px;
   background:#fff;border:1px solid var(--line);border-radius:var(--radius);
   padding:.3rem .6rem;font-weight:600;color:var(--ink2);
-  font-size:clamp(.63rem,1.4vh,.76rem);box-shadow:0 2px 9px rgba(17,32,26,.05);
+  font-size:clamp(.67rem,1.42vh,.78rem);box-shadow:0 2px 9px rgba(17,32,26,.05);
 }
 
 /* ---------- call to action ---------- */
@@ -263,7 +276,7 @@ h1.headline{
   background:rgba(255,255,255,.72);
   color:var(--ink2);
   font-family:var(--font-b);font-weight:600;
-  font-size:clamp(.6rem,1.28vh,.71rem);
+  font-size:clamp(.65rem,1.32vh,.73rem);
   letter-spacing:.01em;
   padding:.36rem .72rem;
   gap:.38rem;
@@ -290,14 +303,14 @@ h1.headline{
 .cta-alt small{font-weight:500;color:var(--muted);font-size:.94em}
 .fine{
   margin:0;color:var(--muted);line-height:1.5;max-width:36ch;
-  font-size:clamp(.63rem,1.3vh,.75rem);
+  font-size:clamp(.68rem,1.38vh,.78rem);
 }
 
 /* ---------- footer ---------- */
 .foot{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;flex:0 0 auto}
 .legal-links{
   display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 6px;
-  font-size:clamp(.66rem,1.42vh,.78rem);font-weight:700;
+  font-size:clamp(.72rem,1.5vh,.82rem);font-weight:700;
 }
 .legal-links button{
   font:inherit;font-weight:700;color:var(--em-d);background:none;border:0;padding:2px 1px;
@@ -307,9 +320,9 @@ h1.headline{
 .sep{color:rgba(17,32,26,.28);font-weight:700}
 .risk{
   margin:0;color:var(--muted);line-height:1.45;max-width:46ch;
-  font-size:clamp(.58rem,1.22vh,.7rem);
+  font-size:clamp(.66rem,1.35vh,.74rem);
 }
-.copy{margin:0;color:#8A9A90;font-size:clamp(.56rem,1.18vh,.67rem)}
+.copy{margin:0;color:#7C8C82;font-size:clamp(.64rem,1.3vh,.71rem)}
 
 /* ============================================================
    MODALS — legal pages
@@ -331,7 +344,7 @@ h1.headline{
   padding:14px 16px;border-bottom:1px solid var(--line);
   background:linear-gradient(180deg,#FFFCF4,#FFF8EC);
 }
-.modal-head h3{margin:0;font-family:var(--font-h);font-size:1.02rem;color:var(--ink);letter-spacing:-.01em}
+.modal-head h2{margin:0;font-family:var(--font-h);font-size:1.02rem;color:var(--ink);letter-spacing:-.01em}
 .modal-head small{display:block;font-size:.68rem;color:var(--muted);font-weight:600}
 .x{
   flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
@@ -342,10 +355,10 @@ h1.headline{
   padding:16px 18px 20px;overflow-y:auto;-webkit-overflow-scrolling:touch;
   font-size:.9rem;color:var(--ink2);
 }
-.modal-body h4{
-  font-family:var(--font-h);color:var(--ink);font-size:.95rem;margin:1.15rem 0 .35rem;letter-spacing:-.01em;
+.modal-body h3{
+  font-family:var(--font-h);color:var(--ink);font-size:.95rem;font-weight:700;margin:1.15rem 0 .35rem;letter-spacing:-.01em;
 }
-.modal-body h4:first-child{margin-top:0}
+.modal-body h3:first-child{margin-top:0}
 .modal-body p{margin:0 0 .7rem}
 .modal-body ul{margin:0 0 .8rem;padding:0;list-style:none;display:grid;gap:.35rem}
 .modal-body ul li{padding-left:1rem;position:relative}
@@ -406,7 +419,8 @@ h1.headline{
 </head>
 
 <body>
-<main class="screen">
+<a class="skip-link" href="#main">Skip to main content</a>
+<main class="screen" id="main">
 
   <!-- ===== TOP BAR ===== -->
   <header class="topbar">
@@ -468,7 +482,8 @@ h1.headline{
 
     <a class="cta cta-alt" id="agencyBtn"
        href="https://t.me/+w2ZGydaYo6tiMzdl"
-       target="_blank" rel="noopener nofollow">
+       target="_blank" rel="noopener nofollow"
+       aria-label="Contact Adstele Agency on Telegram — advertising and promotion enquiries only">
       <svg class="ico-mega" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V5L6 9H4a1 1 0 0 0-1 1z"/>
         <path d="M15.5 8.5a5 5 0 0 1 0 7"/>
@@ -503,34 +518,34 @@ h1.headline{
   <div class="modal-back" data-close></div>
   <div class="modal-card">
     <div class="modal-head">
-      <div><h3 id="mt-privacy">Privacy Policy</h3><small>Last updated: <span data-cfg="updated">4 October 2026</span></small></div>
+      <div><h2 id="mt-privacy">Privacy Policy</h2><small>Last updated: <span data-cfg="updated">4 October 2026</span></small></div>
       <button class="x" type="button" data-close aria-label="Close privacy policy">✕</button>
     </div>
     <div class="modal-body">
       <div class="modal-note"><b>In short:</b> we collect only what you choose to share, we use it solely to send you free educational updates, we never sell your personal data, and you may ask us to erase it at any time.</div>
 
-      <h4>1. Who we are</h4>
+      <h3>1. Who we are</h3>
       <p>This website, together with the free Telegram community operated under the name <b data-cfg="channelName">HAJI MEMON SALMAN TRADER</b> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;), provides <b>free educational content</b> concerning market basics, financial awareness and discipline. We are not a broker, exchange, investment adviser, financial institution or licensed firm of any kind.</p>
       <p>Where UK or EU data protection law applies, we act as the <b>data controller</b> in respect of your personal data.</p>
 
-      <h4>2. Personal data you give us</h4>
+      <h3>2. Personal data you give us</h3>
       <ul>
         <li>Your name, email address and telephone or WhatsApp number &mdash; where you complete a form on this page or a Meta (Facebook/Instagram) lead form.</li>
         <li>Your message or enquiry to us.</li>
         <li>Preferences you choose to share, such as your preferred language (English or Roman Urdu) or your level of experience.</li>
       </ul>
 
-      <h4>3. Personal data collected automatically</h4>
+      <h3>3. Personal data collected automatically</h3>
       <ul>
         <li>Device and browser details, operating system, language and approximate location (country or city level only).</li>
         <li>Usage data, such as pages viewed, the referring link and button clicks &mdash; for example, whether the &ldquo;Join Free&rdquo; button was pressed.</li>
         <li>Technical logs, including your IP address, recorded by our hosting provider for security and spam prevention purposes.</li>
       </ul>
 
-      <h4>4. What we never ask for</h4>
+      <h3>4. What we never ask for</h3>
       <p>We never ask for, and strongly advise you never to share: bank account or card details, national identity documents, brokerage passwords, wallet recovery phrases, one-time passcodes (OTPs) or any payment whatsoever. Our community is provided <b>free of charge</b>, and no person is authorised to request money on our behalf.</p>
 
-      <h4>5. How we use your personal data</h4>
+      <h3>5. How we use your personal data</h3>
       <ul>
         <li>To send you free educational updates and community announcements, but only where you have opted in.</li>
         <li>To answer your enquiries and to provide learning support.</li>
@@ -541,28 +556,28 @@ h1.headline{
       </ul>
       <p><b>We do not sell, rent or trade your personal data to anyone.</b></p>
 
-      <h4>6. Lawful basis for processing</h4>
+      <h3>6. Lawful basis for processing</h3>
       <p>Where data protection law requires a lawful basis, we rely upon: <b>your consent</b> (forms, updates and cookies); our <b>legitimate interests</b> (keeping this page secure, functional and free from spam, and improving our educational content); and <b>compliance with our legal obligations</b>.</p>
 
-      <h4>7. Cookies and similar technologies</h4>
+      <h3>7. Cookies and similar technologies</h3>
       <p>We use essential cookies or local storage in order to remember your preferences and to keep this page working, together with analytics and measurement technologies that help us to understand how the page is used.</p>
       <p>Where you arrive from a Meta advertisement, measurement tools may record anonymous events such as a page view or a button click. You may block or delete cookies through your browser settings at any time; doing so will not prevent you from joining the free community.</p>
       <p>To control how Meta uses your data for advertising purposes, please visit Meta&rsquo;s Ad Preferences and Privacy Center.</p>
 
-      <h4>8. Meta and Facebook lead data</h4>
+      <h3>8. Meta and Facebook lead data</h3>
       <p>Where you complete a lead form on Facebook or Instagram, Meta shares the information you entered with us. We use it <b>solely</b> to send you the free community link and educational updates. It is never sold, rented or used for unrelated marketing purposes. This page and community are <b>not part of, endorsed by, or affiliated with Meta Platforms, Inc.</b>, and Meta processes data independently under its own policies.</p>
 
-      <h4>9. Sharing and disclosure</h4>
+      <h3>9. Sharing and disclosure</h3>
       <ul>
         <li><b>Service providers</b> &mdash; trusted hosting, email and analytics providers who process data on our instructions and under confidentiality obligations.</li>
         <li><b>Legal requirements</b> &mdash; where we are required to do so by law or by valid legal process, or in order to protect the safety and rights of our members.</li>
       </ul>
       <p>We do not share your personal data with other members, advertisers or data brokers.</p>
 
-      <h4>10. How long we keep personal data</h4>
+      <h3>10. How long we keep personal data</h3>
       <p>We retain personal data only for as long as it is needed. In practice, this means for as long as you remain subscribed to our updates, or for up to 24 months of inactivity. Server logs are retained for a short period for security purposes. Once data is no longer required, it is erased or anonymised.</p>
 
-      <h4>11. Your rights</h4>
+      <h3>11. Your rights</h3>
       <p>Subject to applicable law, you have the right to:</p>
       <ul>
         <li>access the personal data we hold about you;</li>
@@ -575,22 +590,22 @@ h1.headline{
       </ul>
       <p>To exercise any of these rights, please email <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a> . We will respond within one month, and we will never charge a fee for doing so.</p>
 
-      <h4>12. Security</h4>
+      <h3>12. Security</h3>
       <p>We apply appropriate technical and organisational measures, including HTTPS encryption, restricted access to personal data and data minimisation. Nevertheless, no method of transmission or storage over the internet is completely secure, and we cannot guarantee absolute security. Please assist us by never sharing passwords or one-time passcodes with anyone.</p>
 
-      <h4>13. Children&rsquo;s privacy</h4>
+      <h3>13. Children&rsquo;s privacy</h3>
       <p>This page and community are intended for persons aged <b>18 and over</b>, and are not directed at children. We do not knowingly collect personal data from children. If you believe that a child has provided us with personal data, please contact us and we will erase it promptly.</p>
 
-      <h4>14. International transfers</h4>
+      <h3>14. International transfers</h3>
       <p>Our service providers may store personal data on servers located in other countries. Where this occurs, we rely upon appropriate safeguards, such as standard contractual clauses and our providers&rsquo; own security and compliance commitments.</p>
 
-      <h4>15. Third-party links and platforms</h4>
+      <h3>15. Third-party links and platforms</h3>
       <p>This page links to third-party platforms, including Telegram. We do not control those platforms and are not responsible for their privacy practices. We are not affiliated with, endorsed by or sponsored by Telegram Inc. We encourage you to read their privacy policies.</p>
 
-      <h4>16. Changes to this policy</h4>
+      <h3>16. Changes to this policy</h3>
       <p>We may amend this policy from time to time. Any amendment will be published on this page together with a new &ldquo;Last updated&rdquo; date. Your continued use of the page following publication constitutes acceptance of the amended policy.</p>
 
-      <h4>17. Contact and complaints</h4>
+      <h3>17. Contact and complaints</h3>
       <p>Data Protection Contact / Grievance Officer &mdash; <span data-cfg="channelName">HAJI MEMON SALMAN TRADER</span><br />
       Email: <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a><br />
       We aim to acknowledge every enquiry within 48 hours and to resolve it within one month.</p>
@@ -607,16 +622,16 @@ h1.headline{
   <div class="modal-back" data-close></div>
   <div class="modal-card">
     <div class="modal-head">
-      <div><h3 id="mt-terms">Terms &amp; Conditions</h3><small>Last updated: <span data-cfg="updated">4 October 2026</span></small></div>
+      <div><h2 id="mt-terms">Terms &amp; Conditions</h2><small>Last updated: <span data-cfg="updated">4 October 2026</span></small></div>
       <button class="x" type="button" data-close aria-label="Close terms and conditions">✕</button>
     </div>
     <div class="modal-body">
       <div class="modal-note">This is a <b>free educational community</b>. We teach; we do not provide financial advice, buy or sell recommendations, or performance promises. Members must be <b>18 or over</b> and must never send money to any person claiming to represent us.</div>
 
-      <h4>1. Agreement to these Terms</h4>
+      <h3>1. Agreement to these Terms</h3>
       <p>By using this website, submitting a form, or joining our free Telegram community operated under the name <b data-cfg="channelName">HAJI MEMON SALMAN TRADER</b> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;), you agree to be bound by these Terms. If you do not agree with them, please do not use this page or the community.</p>
 
-      <h4>2. What we provide</h4>
+      <h3>2. What we provide</h3>
       <p>We provide <b>free educational content only</b>, which may include:</p>
       <ul>
         <li>beginner-friendly lessons on market basics and terminology;</li>
@@ -626,10 +641,10 @@ h1.headline{
       </ul>
       <p>Content is shared in English and Roman Urdu. As it is provided free of charge, we may alter, suspend or withdraw any part of it at any time without notice.</p>
 
-      <h4>3. Eligibility (18+)</h4>
+      <h3>3. Eligibility (18+)</h3>
       <p>You must be at least <b>18 years of age</b>, must be legally capable of entering into a binding agreement, and must not be prohibited by the laws applicable to you from receiving such content. This community is not intended for children, and we do not knowingly permit minors to participate.</p>
 
-      <h4>4. No financial advice</h4>
+      <h3>4. No financial advice</h3>
       <p>All content is provided for <b>general information, learning and education only</b>. Nothing we share constitutes financial, tax or legal advice; a recommendation, endorsement or solicitation to buy or sell any security, currency, commodity, token or derivative; a personalised call or instruction; or an offer of any service requiring a licence.</p>
       <ul>
         <li>We do not provide buy or sell recommendations, market calls or portfolio management.</li>
@@ -639,32 +654,32 @@ h1.headline{
       </ul>
       <p>Every decision you take in reliance upon what you learn is <b>your own responsibility</b>. You may lose money.</p>
 
-      <h4>5. Free community &mdash; no payments</h4>
+      <h3>5. Free community &mdash; no payments</h3>
       <ul>
         <li>Membership and all content are provided <b>free of charge</b>. There is no membership fee, course fee, subscription or hidden charge.</li>
         <li>We will <b>never</b> request payment, bank or card details, one-time passcodes, passwords or wallet recovery phrases. Any person who does so is <b>not</b> us.</li>
         <li>Where any person claims to represent us and demands money or login details, please stop, do not pay, and report it to us immediately.</li>
       </ul>
 
-      <h4>6. Acceptable use</h4>
+      <h3>6. Acceptable use</h3>
       <p>When using this page or the community, you agree <b>not</b> to: post or send spam, advertisements, promotional or referral links, or chain messages; solicit money, funds or personal data from other members; impersonate us, our administrators or any other person; promote gambling or betting, lotteries, fraudulent loan applications or any unlawful, deceptive or harmful activity; harass, threaten, abuse, defame or discriminate against any person; publish hateful or obscene material; infringe the intellectual property, privacy or other rights of any person; attempt to hack, scrape, overload or disrupt this page or the community; or provide false or misleading information.</p>
 
-      <h4>7. Community rules and moderation</h4>
+      <h3>7. Community rules and moderation</h3>
       <p>We aim to maintain a respectful, family-friendly and scam-free environment. In order to protect members, we may remove any post or message that breaches these Terms, warn or remove members, and report suspected fraud to the relevant platform or authority. Participation is a privilege and not a right, and our moderation decisions are final &mdash; although you are always welcome to contact us and put your side of the matter.</p>
 
-      <h4>8. Intellectual property</h4>
+      <h3>8. Intellectual property</h3>
       <p>Our name, branding, layout and written educational material belong to us or are used with permission, and are protected by applicable intellectual property law. You may read, print and share our educational posts for <b>personal, non-commercial learning</b>, provided that our name and this notice remain attached. You may not copy, resell, rebrand, redistribute or republish our content as your own, or use it to promote or sell any course or paid service.</p>
 
-      <h4>9. Content you submit</h4>
+      <h3>9. Content you submit</h3>
       <p>You are responsible for anything you post, send or submit, and you confirm that you own it or have permission to share it, and that it infringes no person&rsquo;s rights. By sending us a question, you grant us permission to answer it publicly in a general, educational manner. Please do not post personal, financial or family information concerning yourself or others.</p>
 
-      <h4>10. Third-party platforms</h4>
+      <h3>10. Third-party platforms</h3>
       <p>Our community is hosted on <b>Telegram</b>, and we may advertise through <b>Meta</b> (Facebook/Instagram). The terms and policies of those platforms apply to your use of them. <b>We are not affiliated with, sponsored by, endorsed by or administered by Meta Platforms, Inc., Telegram Inc., or any broker or exchange.</b></p>
 
-      <h4>11. Disclaimer of warranties</h4>
+      <h3>11. Disclaimer of warranties</h3>
       <p>This page and the community are provided on an <b>&ldquo;as is&rdquo;</b> and <b>&ldquo;as available&rdquo;</b> basis. To the fullest extent permitted by law, we exclude all warranties, conditions and terms, whether express or implied, including any implied terms as to satisfactory quality, fitness for a particular purpose, accuracy or non-infringement. We do not warrant that the page will be uninterrupted, error-free or secure, or that any content is complete, accurate or up to date.</p>
 
-      <h4>12. Limitation of liability</h4>
+      <h3>12. Limitation of liability</h3>
       <p>To the fullest extent permitted by law, we, our administrators and our volunteers shall <b>not</b> be liable for any indirect, incidental, special, consequential or punitive loss or damage, nor for any market-related losses, loss of data or loss of opportunity, arising out of or in connection with:</p>
       <ul>
         <li>your use of, or inability to use, this page or the community;</li>
@@ -674,23 +689,23 @@ h1.headline{
       </ul>
       <p>As the community is provided <b>free of charge</b>, our total aggregate liability to you in respect of any claim shall not exceed <b>zero</b> &mdash; being the amount you have paid to us. Nothing in these Terms excludes or limits our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, or for any other liability which cannot lawfully be excluded or limited.</p>
 
-      <h4>13. Indemnity</h4>
+      <h3>13. Indemnity</h3>
       <p>You agree to indemnify and hold harmless us, our administrators and our volunteers against any claims, damages, liabilities, losses and costs (including reasonable legal fees) arising from your breach of these Terms, your misuse of this page or the community, your content, or your breach of any law or third-party right.</p>
 
-      <h4>14. Leaving and termination</h4>
+      <h3>14. Leaving and termination</h3>
       <ul>
         <li>You may leave the community at any time by selecting &ldquo;Leave Channel&rdquo; in Telegram. No reason is required, and no fee is payable.</li>
         <li>We may suspend or remove access where these Terms are breached, or in order to protect the safety and security of our members.</li>
         <li>You may also ask us to erase your personal data &mdash; please see our Privacy Policy.</li>
       </ul>
 
-      <h4>15. Governing law and jurisdiction</h4>
+      <h3>15. Governing law and jurisdiction</h3>
       <p>These Terms, and any dispute or claim arising out of or in connection with them, shall be governed by the laws of the jurisdiction in which we operate. Please contact us first, so that we may attempt to resolve any dispute amicably and in good faith before either party commences proceedings. Nothing in this clause affects any mandatory rights you may have under the consumer law of your country of residence.</p>
 
-      <h4>16. Changes to these Terms</h4>
+      <h3>16. Changes to these Terms</h3>
       <p>We may amend these Terms from time to time. Any amendment will be published on this page together with a new &ldquo;Last updated&rdquo; date, and material changes will be highlighted. Your continued use of the page or community following publication constitutes acceptance of the amended Terms. If you do not agree with them, please stop using the page and leave the community.</p>
 
-      <h4>17. Contact</h4>
+      <h3>17. Contact</h3>
       <p>For any question concerning these Terms, please contact: <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a></p>
       <p>By joining our Telegram community, you confirm that you are <b>18 or over</b>, that you understand this to be an <b>educational community</b>, and that you accept that <b>markets carry risk and that no outcome is guaranteed</b>.</p>
     </div>
@@ -706,19 +721,19 @@ h1.headline{
   <div class="modal-back" data-close></div>
   <div class="modal-card">
     <div class="modal-head">
-      <div><h3 id="mt-disclaimer">Disclaimer</h3><small>Last updated: <span data-cfg="updated">4 October 2026</span></small></div>
+      <div><h2 id="mt-disclaimer">Disclaimer</h2><small>Last updated: <span data-cfg="updated">4 October 2026</span></small></div>
       <button class="x" type="button" data-close aria-label="Close disclaimer">✕</button>
     </div>
     <div class="modal-body">
       <div class="modal-note warn"><b>Please read this first:</b> everything we share is provided for <b>learning and education only</b>. It is not financial advice. We do not provide buy or sell recommendations, and we do not guarantee any outcome. Markets carry a real risk of losing money.</div>
 
-      <h4>1. Educational purpose only</h4>
+      <h3>1. Educational purpose only</h3>
       <p><b data-cfg="channelName">HAJI MEMON SALMAN TRADER</b> is a <b>free educational community</b> that helps beginners to understand general concepts of markets, risk awareness and discipline. We are a study group &mdash; not a broker, exchange, fund, research house, advisory firm or employer. We do not sell courses, subscriptions, software, recommendations or mentorship packages, and any person who sells such things in our name is not us.</p>
 
-      <h4>2. No financial advice</h4>
+      <h3>2. No financial advice</h3>
       <p>Nothing on this page, in our Telegram community, or in any message, image or video that we publish constitutes financial, tax or legal advice; a recommendation, endorsement or solicitation to buy or sell any financial product; a personalised call based upon your circumstances; or an offer of any service requiring a licence. We do not know your financial circumstances, and we are not your adviser.</p>
 
-      <h4>3. Risk warning</h4>
+      <h3>3. Risk warning</h3>
       <ul>
         <li>You may lose some or all of your capital. With leveraged or derivative products, you may lose more than you deposit.</li>
         <li>Past performance, charts and worked examples are never a reliable indicator of future results.</li>
@@ -728,29 +743,29 @@ h1.headline{
       </ul>
       <p>If markets are affecting your finances, sleep, studies, work or family life, please stop and seek support.</p>
 
-      <h4>4. No guarantee of results</h4>
+      <h3>4. No guarantee of results</h3>
       <p>We make no promise and give no guarantee of accuracy or any particular outcome. Learning about markets improves understanding; it does not remove risk. Any person who claims otherwise is misleading you, and we ask you to report them to us.</p>
 
-      <h4>5. No affiliation or endorsement</h4>
+      <h3>5. No affiliation or endorsement</h3>
       <p>This page and community are <b>not affiliated with, authorised by, endorsed by or sponsored by</b>: Meta Platforms, Inc. (Facebook, Instagram, WhatsApp) &mdash; we may simply advertise upon those platforms; Telegram Inc. &mdash; we simply host our free channel there; any broker, exchange, bank, prop firm or payment processor; or any religious institution, mosque or scholar. All trademarks belong to their respective owners and are referred to for identification purposes only.</p>
 
-      <h4>6. Third-party content</h4>
+      <h3>6. Third-party content</h3>
       <p>We may share links to free, publicly available resources, or mention third-party platforms for learning purposes. We do not control those websites and are not responsible for their content, accuracy, security, terms, prices or practices. A link is <b>not</b> an endorsement, and we encourage you to verify information from official sources.</p>
 
-      <h4>7. Testimonials and examples</h4>
+      <h3>7. Testimonials and examples</h3>
       <p>Where a member&rsquo;s comment or a chart example is shown, it is illustrative only. It does not represent a typical outcome, and it is not a promise that you will achieve a similar or any result. Charts, back-tests and historical examples are teaching tools, not forecasts.</p>
 
-      <h4>8. Your responsibility</h4>
+      <h3>8. Your responsibility</h3>
       <p>You are solely responsible for your own decisions, trades and their outcomes; for verifying any information before relying upon it; and for complying with the laws and tax rules applicable to you. We are not responsible for losses caused by your use of our educational content, or by the actions of any third party or impostor.</p>
 
-      <h4>9. Religious note</h4>
+      <h3>9. Religious note</h3>
       <p>Our content is prepared with Muslim learners in mind and is written in a respectful and ethical manner. <b>Everyone is welcome here, whatever their background or beliefs.</b> We do not promote gambling or betting, lotteries, interest-based lending or deceptive financial schemes.</p>
       <p>However, <b>we do not issue religious rulings or fatwas</b>, and we do not declare any particular market product to be halal or haram. Interpretations differ between scholars and schools of thought. For any religious question concerning a financial matter, please consult a qualified scholar whom you trust. Our role is educational only.</p>
 
-      <h4>10. Age restriction</h4>
+      <h3>10. Age restriction</h3>
       <p>This page and community are intended for adults aged <b>18 or over</b>, and are not designed for children. Parents and guardians are requested to supervise internet use within the home.</p>
 
-      <h4>11. Contact</h4>
+      <h3>11. Contact</h3>
       <p>Have you found something misleading, or something claiming to be us? Please report it, as it helps to protect everyone: <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a></p>
       <p><b>In summary:</b> we teach for free, we are honest about risk, and we make no promises at all. What you do with what you learn is your decision and your responsibility.</p>
     </div>
@@ -766,11 +781,11 @@ h1.headline{
   <div class="modal-back" data-close></div>
   <div class="modal-card">
     <div class="modal-head">
-      <div><h3 id="mt-contact">Contact &amp; Grievance</h3><small>We usually reply within 1–2 working days</small></div>
+      <div><h2 id="mt-contact">Contact &amp; Grievance</h2><small>We usually reply within 1–2 working days</small></div>
       <button class="x" type="button" data-close aria-label="Close contact information">✕</button>
     </div>
     <div class="modal-body">
-      <h4>How can we help?</h4>
+      <h3>How can we help?</h3>
       <div class="contact-cards">
         <div class="ccard">
           <b>📚 Learning enquiries</b>
@@ -790,7 +805,7 @@ h1.headline{
         </div>
       </div>
 
-      <h4>Grievance officer / nodal contact</h4>
+      <h3>Grievance officer / nodal contact</h3>
       <ul>
         <li><b>Designation:</b> Community Administrator &mdash; <span data-cfg="channelName">HAJI MEMON SALMAN TRADER</span></li>
         <li><b>Email:</b> <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a></li>
@@ -798,13 +813,13 @@ h1.headline{
         <li><b>Resolution:</b> attempted within 15 working days</li>
       </ul>
 
-      <h4>Safety notice</h4>
+      <h3>Safety notice</h3>
       <div class="modal-note warn">
         Our community is provided <b>free of charge</b>. We will never ask you for money, bank details, one-time passcodes or passwords.
         Only the Telegram link published on this page is official. If you are unsure, please email us first.
       </div>
 
-      <h4>Important</h4>
+      <h3>Important</h3>
       <p>This page is provided for <b>education only</b>. It is neither part of, nor endorsed by, Meta Platforms or Telegram. We do not provide financial advice, and no outcome is guaranteed. Intended for persons aged 18 and over.</p>
     </div>
     <div class="modal-foot">

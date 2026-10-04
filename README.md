@@ -67,6 +67,20 @@ koi external page nahi khulta, sab kuch ek hi page par milta hai.
 Yeh Meta reviewer ke liye zyada professional aur trustworthy lagta hai.
 
 
+
+### 🐞 Round 4 — bug fixes (agar aap khud edit karein, yeh dhyan rakhein)
+| Layer | z-index | Note |
+|---|---|---|
+| `.avatar-wrap::before` (glow) | 0 | photo ke peeche |
+| `.ring` (gradient border) | 1 | |
+| `.ring-inner` + `img` | 2 | photo layer |
+| `.verified` (ADMIN badge) | **3** | ⚠️ ise 3 se kam na karein, warna photo ke peeche chhup jayega |
+| `.modal` | 120 | policy popups |
+
+- Photo par **koi `filter` / `hue-rotate` / `image-rendering` na lagayein** — colours bigad jayenge.
+- Photo ka crop: `:root` mein **`--avatar-pos:center 26%`** (face frame mein lane ke liye).
+- **Sharpness tip:** imgbb par image ki **400×400 px** copy upload karein — page tez chalega, quality same.
+
 ### ➕ Do buttons hain page par
 | Button | Link | Kahan badlein |
 |---|---|---|
