@@ -240,6 +240,40 @@ phir bhi chahein to policies ko visible FAQ ki tarah neeche add kiya ja sakta ha
 
 ---
 
+---
+
+## 🟢 ROUND 3 — Profile ring fix + Adstele Agency button
+
+### 🐞 Bug fix: profile photo ke colours badal rahe the
+**Wajah:** purani CSS mein `.ring` par `animation: spinhue` lagayi thi jo `filter: hue-rotate(360deg)`
+use karti hai. Kyunki **photo usi element ke andar** thi (`.ring-inner`), browser filter ko photo par
+bhi laga raha tha — natijatan photo ke rang har 12 second mein ghoomte rehte the. 😵
+**Fix:** ab **teen alag layers** hain:
+1. `.avatar-wrap::before` → bahar ka soft glow (pulse)
+2. `.ring::before` → conic-gradient border jo **sirf khud** rotate hoti hai
+3. `.ring-inner > img` → photo, **zero filter**, is liye colours 100% original
+
+**Sharpen + crisp look:** photo layer par koi blur/filter nahi, `object-fit:cover` +
+`object-position:center 26%` (face frame mein), `image-rendering:-webkit-optimize-contrast`
+(browser se sharp scaling), GPU layer (`translateZ(0)`) taake scaling par blur na aaye, aur
+andar ki taraf 1.5px white stroke — photo crisp aur "premium" lagti hai.
+
+### ➕ Naya button: "Advertising by Adstele Agency"
+- Telegram join button ke **theek neeche**, secondary (white/outline) style mein
+- Link: `https://t.me/+w2ZGydaYo6tiMzdl` (naya tab mein khulta hai, `rel="noopener nofollow"`)
+- **Meta policy:** yeh koi financial product/service nahi hai, sirf ek **marketing agency ka contact**
+  hai — is liye Financial Services rules is par lagu nahi hote. Koi claim bhi nahi kiya gaya.
+- **Tracking smart rakhi:** agency button `Lead` event **fire nahi karta** (warna aapke ad
+  optimization ka data ganda ho jata — aadhi "leads" community ki hoti, aadhi agency ki).
+  Iske liye alag custom event `AgencyClick` use hota hai. Main Telegram CTA ab bhi **Lead** hi hai. ✅
+- **Design:** primary green button hi hero rehta hai, agency button chhota aur halka hai — is se
+  user ka dhyan asli join button par hi rehta hai (conversion-first layout).
+
+### Fit (single screen) — dobara check kiya
+Naya button add hone ke baad fit ladder refresh kiya:
+`height < 820px` → chips hide · `< 760px` → badges hide + chhoti avatar · `< 600px` → chhota h1/fine ·
+`< 470px` (landscape) → fine + subtitle hide. Chhote se bade har phone par ek hi screen mein fit.
+
 ## 🚦 Publish karne se pehle — 5 step
 
 1. `CONFIG.telegramUrl` = **asli channel link** (B1)

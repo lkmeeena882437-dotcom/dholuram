@@ -66,6 +66,21 @@ koi external page nahi khulta, sab kuch ek hi page par milta hai.
 "I or her personal data", "one month" response time, UK GDPR terminology (data controller, ICO).
 Yeh Meta reviewer ke liye zyada professional aur trustworthy lagta hai.
 
+
+### ➕ Do buttons hain page par
+| Button | Link | Kahan badlein |
+|---|---|---|
+| **Join Free Telegram Channel** (primary, green) | aapka community channel | `CONFIG.telegramUrl` |
+| **Advertising by Adstele Agency** (secondary, white) | `https://t.me/+w2ZGydaYo6tiMzdl` | HTML mein `id="agencyBtn"` |
+
+> Agency button `Lead` event **fire nahi karta** (aapka ad-optimization data saaf rehta hai) —
+> uske liye alag `AgencyClick` custom event hai.
+
+### 🎨 Profile ring (colours fix)
+Purani version mein ring par `hue-rotate` tha jo **photo ke rang bhi badal** deta tha. Ab border
+alag layer par rotate hoti hai, photo par **koi filter nahi** — colours bilkul original, aur
+sharpen + pulse glow + rotating gradient border sab kaam karta hai.
+
 ### `standalonePages` kya hai?
 Agar aap `privacy-policy.html` / `terms-conditions.html` / `disclaimer.html` / `contact.html` bhi
 upload kar rahe hain, to `standalonePages: true` kar dein — har popup ke footer mein

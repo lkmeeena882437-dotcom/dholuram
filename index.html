@@ -121,23 +121,66 @@ a{color:var(--em-d)}
   text-align:center;gap:clamp(6px,1.1vh,14px);
 }
 
-/* profile photo with gradient ring */
-.avatar-wrap{position:relative;width:clamp(74px,13vh,112px);aspect-ratio:1;flex:0 0 auto}
-.ring{
-  position:absolute;inset:0;border-radius:50%;padding:3px;
-  background:conic-gradient(from 150deg,#0E9F6E,#0EA5E9,#7C3AED,#D99B18,#0E9F6E);
-  box-shadow:0 14px 32px rgba(14,116,144,.24);
-  animation:spinhue 12s linear infinite;
+/* ---------- Profile photo: rotating gradient border + pulsing glow ----------
+   Zaroori: image par koi filter / hue-rotate NAHI lagta, is liye uske colours
+   hamesha original rehte hain. Sirf border layer alag se ghoomti hai. */
+.avatar-wrap{
+  position:relative;width:clamp(74px,13vh,112px);aspect-ratio:1;flex:0 0 auto;
+  isolation:isolate;
 }
-@keyframes spinhue{to{filter:hue-rotate(360deg)}}
-.ring-inner{position:absolute;inset:3px;border-radius:50%;overflow:hidden;background:#fff}
+/* soft outer glow (pulse) */
+.avatar-wrap::before{
+  content:"";position:absolute;inset:-16%;border-radius:50%;z-index:0;
+  background:radial-gradient(circle,rgba(14,159,110,.30) 0%,rgba(14,116,144,.16) 45%,transparent 70%);
+  animation:glowPulse 4.2s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes glowPulse{
+  0%,100%{opacity:.55;transform:scale(.96)}
+  50%    {opacity:1;  transform:scale(1.06)}
+}
+/* the gradient ring itself (sirf yeh layer rotate hoti hai) */
+.ring{position:absolute;inset:0;border-radius:50%;z-index:1}
+.ring::before{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 0deg,#0E9F6E,#0EA5E9,#7C3AED,#D99B18,#0E9F6E);
+  animation:spinRing 9s linear infinite;
+  box-shadow:0 12px 30px rgba(14,116,144,.26);
+}
+@keyframes spinRing{
+  from{transform:rotate(0deg)}
+  to  {transform:rotate(360deg)}
+}
+/* pulse wave jo bahar ki taraf nikalta hai */
+.ring::after{
+  content:"";position:absolute;inset:0;border-radius:50%;z-index:-1;
+  animation:pulseWave 3s ease-out infinite;
+}
+@keyframes pulseWave{
+  0%  {box-shadow:0 0 0 0 rgba(14,159,110,.45), 0 0 0 0 rgba(14,116,144,.30)}
+  70% {box-shadow:0 0 0 10px rgba(14,159,110,0), 0 0 0 18px rgba(14,116,144,0)}
+  100%{box-shadow:0 0 0 0 rgba(14,159,110,0), 0 0 0 0 rgba(14,116,144,0)}
+}
+/* photo layer — koi filter nahi, is liye colours bilkul asli rahenge */
+.ring-inner{
+  position:absolute;inset:3px;border-radius:50%;overflow:hidden;background:#fff;z-index:2;
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.95);
+}
 .mono{
   position:absolute;inset:0;border-radius:50%;display:grid;place-items:center;z-index:1;
   background:linear-gradient(135deg,#0E9F6E,#0E7490 92%);
   color:#fff;font-family:var(--font-h);font-weight:900;letter-spacing:.02em;
   font-size:clamp(1.2rem,3.1vh,1.85rem);
 }
-.ring img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.ring img{
+  position:absolute;inset:0;z-index:2;width:100%;height:100%;
+  object-fit:cover;object-position:center 26%;border-radius:50%;
+  -webkit-image-rendering:-webkit-optimize-contrast;image-rendering:-webkit-optimize-contrast;
+  transform:translateZ(0);backface-visibility:hidden;
+}
+@media (prefers-reduced-motion:reduce){
+  .ring::before,.ring::after,.avatar-wrap::before{animation:none !important}
+}
 .verified{
   position:absolute;right:-8px;bottom:-3px;
   border-radius:999px;padding:3px 8px;
@@ -211,6 +254,28 @@ h1.headline{
   transform:translateX(-130%);
 }
 .cta:hover::after{transform:translateX(130%);transition:transform .85s ease}
+
+/* secondary / agency button */
+.cta-alt{
+  background:#fff;color:var(--ink);
+  font-size:clamp(.76rem,1.62vh,.9rem);font-weight:700;
+  padding:clamp(.52rem,1.35vh,.68rem) 1.1rem;
+  border:1.5px solid rgba(14,116,144,.28);
+  box-shadow:0 6px 18px rgba(17,32,26,.08);
+  gap:.5rem;
+}
+.cta-alt:hover{transform:translateY(-2px);border-color:rgba(124,58,237,.45);box-shadow:0 12px 26px rgba(17,32,26,.12)}
+.cta-alt:hover::after{transform:translateX(130%);transition:transform .85s ease}
+.cta-alt .ico-mega{
+  width:1.15em;height:1.15em;flex:0 0 auto;
+  fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
+}
+.cta-alt b{
+  font-family:var(--font-h);font-weight:800;
+  background:linear-gradient(95deg,#0E7490,#7C3AED);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+}
+.cta-alt small{font-weight:600;color:var(--muted);font-size:.86em}
 .fine{
   margin:0;color:var(--muted);line-height:1.5;max-width:36ch;
   font-size:clamp(.63rem,1.3vh,.75rem);
@@ -298,13 +363,19 @@ h1.headline{
 .mono-sm{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;word-break:break-all}
 
 /* ---------- fit tweaks for short screens ---------- */
-@media (max-height:700px){
+@media (max-height:820px){
   .chips{display:none}
-  .avatar-wrap{width:clamp(68px,14vh,92px)}
 }
-@media (max-height:580px){
+@media (max-height:760px){
   .badges{display:none}
-  .sub{font-size:.78rem}
+  .avatar-wrap{width:clamp(70px,14vh,96px)}
+  .sub{font-size:clamp(.76rem,1.62vh,.92rem)}
+}
+@media (max-height:600px){
+  .fine{font-size:.68rem}
+  h1.headline{font-size:clamp(1rem,2.9vh,1.32rem)}
+  .avatar-wrap{width:clamp(62px,13vh,82px)}
+  .cta-alt{font-size:.76rem}
 }
 @media (max-height:470px){
   .fine{display:none}
@@ -376,6 +447,17 @@ h1.headline{
     <a class="cta" id="joinBtn" href="https://t.me/YourChannelUsername" data-cfg-href="telegramUrl" rel="noopener nofollow" target="_blank">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 19 19.2c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.5.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.6 12.3l-4.4-1.4c-.9-.3-.9-.9.2-1.3l17-6.6c.8-.3 1.5.2 1.5 1.3z"/></svg>
       Join Free Telegram Channel
+    </a>
+
+    <a class="cta cta-alt" id="agencyBtn"
+       href="https://t.me/+w2ZGydaYo6tiMzdl"
+       target="_blank" rel="noopener nofollow">
+      <svg class="ico-mega" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V5L6 9H4a1 1 0 0 0-1 1z"/>
+        <path d="M15.5 8.5a5 5 0 0 1 0 7"/>
+        <path d="M18.5 5.5a9 9 0 0 1 0 13"/>
+      </svg>
+      <span>Advertising by <b>Adstele Agency</b> <small>· Connect</small></span>
     </a>
 
     <p class="fine">
@@ -819,9 +901,16 @@ var CONFIG = {
 
   function setupLeadTracking() {
     document.addEventListener("click", function (ev) {
-      var el = ev.target.closest ? ev.target.closest("[data-cfg-href='telegramUrl']") : null;
-      if (!el) return;
-      if (typeof window.fbq === "function") window.fbq("track", "Lead", { content_name: "Telegram Join" });
+      if (!ev.target.closest) return;
+      // main CTA -> Lead (ads optimization isi par chalti hai)
+      if (ev.target.closest("[data-cfg-href='telegramUrl']")) {
+        if (typeof window.fbq === "function") window.fbq("track", "Lead", { content_name: "Telegram Join" });
+        return;
+      }
+      // agency button -> alag custom event, taake Lead data ganda na ho
+      if (ev.target.closest("#agencyBtn")) {
+        if (typeof window.fbq === "function") window.fbq("trackCustom", "AgencyClick", { content_name: "Adstele Agency" });
+      }
     });
   }
 
