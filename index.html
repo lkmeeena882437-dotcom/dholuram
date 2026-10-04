@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>HAJI MEMON SALMAN TRADER — Free Telegram Learning &amp; Education Community</title>
+<meta name="description" content="Join HAJI MEMON SALMAN TRADER — a 100% free Telegram learning community for market basics, money awareness and discipline in English &amp; Urdu. Educational purpose only. 18+." />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#FFFBF2" />
+<meta name="format-detection" content="telephone=no" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="HAJI MEMON SALMAN TRADER — Free Telegram Education Community" />
+<meta property="og:description" content="Free educational community — market basics, money awareness and discipline in English &amp; Urdu. No fees, ever. Join free on Telegram." />
+<meta property="og:site_name" content="HAJI MEMON SALMAN TRADER" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- 🖼️ META AD LINK-PREVIEW IMAGE (live) -->
+<meta property="og:image" content="https://i.ibb.co/9HZyJ6Tx/Whats-App-Image-2026-10-04-at-11-00-43-PM.jpg" />
+<meta property="og:image:alt" content="HAJI MEMON SALMAN TRADER - free learning community" />
+<!-- Hosting ke baad apna domain daalein (SEO ke liye acha hai): -->
+<!-- <meta property="og:url" content="https://aapkadomain.com/" /> -->
+<!-- <link rel="canonical" href="https://aapkadomain.com/" /> -->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230E9F6E'/%3E%3Cpath d='M16 40l10-12 8 8 14-18' stroke='%23FFD86B' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   HAJI MEMON SALMAN TRADER — single-file landing page
+   Cream base · colorful gradient type · one-screen layout
+   ============================================================ */
+:root{
+  --cream:#FFFBF2;
+  --cream2:#FDF3E4;
+  --ink:#11201A;
+  --ink2:#3C5147;
+  --muted:#6E8177;
+  --em:#0E9F6E;
+  --em-d:#05724E;
+  --teal:#0E7490;
+  --gold:#D99B18;
+  --violet:#7C3AED;
+  --rose:#E5484D;
+  --line:rgba(17,32,26,.10);
+  --font-h:"Outfit",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-b:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  /* profile photo ka crop — face frame mein lane ke liye (yahan badlein) */
+  --avatar-pos:center 26%;
+  --radius:999px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--font-b);
+  color:var(--ink2);
+  font-size:16px;
+  line-height:1.6;
+  background:
+    radial-gradient(1000px 620px at 10% -12%, #DCF6EA 0%, rgba(220,246,234,0) 62%),
+    radial-gradient(880px 560px at 94% -4%, #FFEFC9 0%, rgba(255,239,201,0) 60%),
+    radial-gradient(900px 640px at 50% 118%, #E8E1FF 0%, rgba(232,225,255,0) 62%),
+    linear-gradient(180deg,var(--cream) 0%, var(--cream2) 100%);
+  min-height:100vh;
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='76' height='76' viewBox='0 0 76 76'%3E%3Cg fill='none' stroke='%230E9F6E' stroke-opacity='0.13'%3E%3Cpath d='M38 5l33 33-33 33L5 38z'/%3E%3Cpath d='M38 21l17 17-17 17-17-17z'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image:radial-gradient(130% 78% at 50% 0%,#000 12%,transparent 76%);
+  mask-image:radial-gradient(130% 78% at 50% 0%,#000 12%,transparent 76%);
+}
+img{display:block;max-width:100%}
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--ink);color:#fff;font-weight:700;font-size:.85rem;
+  padding:10px 16px;border-radius:0 0 12px 0;text-decoration:none;
+}
+.skip-link:focus{left:0}
+a{color:var(--em-d)}
+
+/* ---------- one-screen shell ---------- */
+.screen{
+  position:relative;z-index:1;
+  width:100%;max-width:640px;
+  min-height:100vh;min-height:100dvh;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+  gap:clamp(6px,1.2vh,16px);
+  padding:clamp(12px,1.8vh,20px) clamp(16px,4.4vw,32px) calc(clamp(12px,1.8vh,20px) + env(safe-area-inset-bottom,0px));
+}
+@media (min-width:760px){
+  body{align-items:center;padding:22px}
+  .screen{
+    min-height:0;
+    height:min(93vh,950px);height:min(93dvh,950px);
+    border:1px solid var(--line);border-radius:34px;
+    background:rgba(255,255,255,.66);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    box-shadow:0 34px 90px rgba(17,32,26,.13);
+    padding:26px 34px;
+    /* safety net: agar kisi laptop par jagah kam pade, to content kat na jaye —
+       scroll hota hai lekin scrollbar dikhta nahi */
+    overflow-y:auto;overscroll-behavior:contain;
+    scrollbar-width:none;
+  }
+  .screen::-webkit-scrollbar{width:0;height:0}
+}
+
+/* ---------- top bar ---------- */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex:0 0 auto}
+.brand{display:flex;align-items:center;gap:8px;min-width:0}
+.brand svg{width:27px;height:27px;flex:0 0 auto;filter:drop-shadow(0 5px 12px rgba(14,117,144,.22))}
+.brand b{
+  font-family:var(--font-h);font-weight:900;letter-spacing:.03em;color:var(--ink);
+  font-size:clamp(.66rem,1.5vh,.8rem);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.pill-18{
+  flex:0 0 auto;font-weight:800;font-size:clamp(.65rem,1.4vh,.73rem);letter-spacing:.04em;
+  color:#8A5E06;background:#FDF1D6;border:1px solid rgba(217,155,24,.32);
+  border-radius:var(--radius);padding:.22rem .55rem;white-space:nowrap;
+}
+
+/* ---------- center stage ---------- */
+.stage{
+  flex:1 1 auto;min-height:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:clamp(6px,1.1vh,14px);
+}
+
+/* ---------- Profile photo: rotating gradient border + pulsing glow ----------
+   Zaroori: image par koi filter / hue-rotate NAHI lagta, is liye uske colours
+   hamesha original rehte hain. Sirf border layer alag se ghoomti hai. */
+.avatar-wrap{
+  position:relative;width:clamp(74px,13vh,112px);aspect-ratio:1;flex:0 0 auto;
+  isolation:isolate;
+}
+/* soft outer glow (pulse) */
+.avatar-wrap::before{
+  content:"";position:absolute;inset:-16%;border-radius:50%;z-index:0;
+  background:radial-gradient(circle,rgba(14,159,110,.30) 0%,rgba(14,116,144,.16) 45%,transparent 70%);
+  animation:glowPulse 4.2s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes glowPulse{
+  0%,100%{opacity:.55;transform:scale(.96)}
+  50%    {opacity:1;  transform:scale(1.06)}
+}
+/* the gradient ring itself (sirf yeh layer rotate hoti hai) */
+.ring{position:absolute;inset:0;border-radius:50%;z-index:1}
+.ring::before{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 0deg,#0E9F6E,#0EA5E9,#7C3AED,#D99B18,#0E9F6E);
+  animation:spinRing 9s linear infinite;
+  box-shadow:0 12px 30px rgba(14,116,144,.26);
+}
+@keyframes spinRing{
+  from{transform:rotate(0deg)}
+  to  {transform:rotate(360deg)}
+}
+/* pulse wave jo bahar ki taraf nikalta hai */
+.ring::after{
+  content:"";position:absolute;inset:0;border-radius:50%;z-index:-1;
+  animation:pulseWave 3s ease-out infinite;
+}
+@keyframes pulseWave{
+  0%  {box-shadow:0 0 0 0 rgba(14,159,110,.45), 0 0 0 0 rgba(14,116,144,.30)}
+  70% {box-shadow:0 0 0 10px rgba(14,159,110,0), 0 0 0 18px rgba(14,116,144,0)}
+  100%{box-shadow:0 0 0 0 rgba(14,159,110,0), 0 0 0 0 rgba(14,116,144,0)}
+}
+/* photo layer — koi filter nahi, is liye colours bilkul asli rahenge */
+.ring-inner{
+  position:absolute;inset:3px;border-radius:50%;overflow:hidden;background:#fff;z-index:2;
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.95);
+}
+.mono{
+  position:absolute;inset:0;border-radius:50%;display:grid;place-items:center;z-index:1;
+  background:linear-gradient(135deg,#0E9F6E,#0E7490 92%);
+  color:#fff;font-family:var(--font-h);font-weight:900;letter-spacing:.02em;
+  font-size:clamp(1.2rem,3.1vh,1.85rem);
+}
+.ring img{
+  position:absolute;inset:0;z-index:2;width:100%;height:100%;
+  object-fit:cover;object-position:var(--avatar-pos,center 26%);border-radius:50%;
+  /* koi filter / hue-rotate / image-rendering override nahi —
+     photo browser ke natural smooth rendering se hi sharp dikhti hai */
+  transform:translateZ(0);backface-visibility:hidden;
+}
+/* ADMIN badge — z-index 3 zaroori hai:
+   .ring = 1, .ring-inner = 2 → badge 3 (warna photo ke peeche chhup jata hai) */
+.verified{
+  position:absolute;right:-7px;bottom:-3px;z-index:3;
+  border-radius:999px;padding:3px 8px;
+  background:linear-gradient(135deg,#0E9F6E,#0E7490);color:#fff;
+  font-family:var(--font-h);font-size:clamp(.56rem,1.05vh,.6rem);
+  font-weight:900;letter-spacing:.08em;line-height:1;
+  border:2px solid #fff;box-shadow:0 5px 14px rgba(14,116,144,.35);
+  white-space:nowrap;
+}
+.brandname{
+  font-family:var(--font-h);font-weight:900;letter-spacing:.035em;text-transform:uppercase;
+  font-size:clamp(.94rem,2.4vh + .45vw,1.35rem);line-height:1.2;margin:0;
+  background:linear-gradient(95deg,#05724E 0%,#0E7490 45%,#7C3AED 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+}
+.handle{margin:0;font-weight:600;color:var(--muted);font-size:clamp(.74rem,1.5vh,.86rem)}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:5px}
+.badge{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:.24rem .58rem;font-weight:700;color:var(--ink2);
+  font-size:clamp(.67rem,1.4vh,.76rem);box-shadow:0 2px 8px rgba(17,32,26,.05);
+}
+
+h1.headline{
+  font-family:var(--font-h);font-weight:800;color:var(--ink);letter-spacing:-.02em;
+  font-size:clamp(1.12rem,3.2vh + .75vw,1.95rem);line-height:1.18;
+  margin:clamp(2px,.8vh,8px) 0 0;max-width:24ch;
+}
+.grad{
+  background:linear-gradient(96deg,#0E9F6E 0%,#0EA5E9 38%,#7C3AED 72%,#E5484D 100%);
+  background-size:220% 100%;animation:slide 8s ease-in-out infinite alternate;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+}
+.grad2{
+  background:linear-gradient(96deg,#D99B18,#E5484D 60%,#7C3AED);
+  background-size:200% 100%;animation:slide 7s ease-in-out infinite alternate;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+}
+@keyframes slide{from{background-position:0% 50%}to{background-position:100% 50%}}
+.sub{
+  margin:0;color:var(--ink2);line-height:1.62;max-width:38ch;
+  font-size:clamp(.78rem,1.7vh,.97rem);
+}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.chip{
+  display:inline-flex;align-items:center;gap:5px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:.3rem .6rem;font-weight:600;color:var(--ink2);
+  font-size:clamp(.67rem,1.42vh,.78rem);box-shadow:0 2px 9px rgba(17,32,26,.05);
+}
+
+/* ---------- call to action ---------- */
+.cta{
+  display:flex;align-items:center;justify-content:center;gap:.6rem;
+  width:100%;max-width:480px;text-decoration:none;color:#fff;
+  font-family:var(--font-h);font-weight:800;letter-spacing:.01em;
+  font-size:clamp(1rem,2.45vh,1.24rem);
+  padding:clamp(.88rem,2.2vh,1.18rem) 1.4rem;
+  min-height:clamp(52px,7.4vh,64px);
+  border-radius:var(--radius);
+  background:linear-gradient(135deg,#0E9F6E 0%,#0C8A7A 52%,#0E7490 100%);
+  box-shadow:0 18px 40px rgba(14,159,110,.36), 0 0 0 1px rgba(255,255,255,.12) inset;
+  position:relative;overflow:hidden;
+  transition:transform .18s ease, box-shadow .22s ease;
+}
+.cta:hover{transform:translateY(-2px);box-shadow:0 24px 52px rgba(14,159,110,.44)}
+.cta:active{transform:translateY(0) scale(.995)}
+.cta svg{width:1.28em;height:1.28em;fill:currentColor;flex:0 0 auto}
+.cta::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(118deg,transparent 22%,rgba(255,255,255,.38) 50%,transparent 78%);
+  transform:translateX(-130%);
+}
+.cta:hover::after{transform:translateX(130%);transition:transform .85s ease}
+
+/* ---------- agency credit: chhota, quiet, sirf advertisers ke liye ---------- */
+.cta-alt{
+  width:auto;max-width:100%;min-height:0;
+  display:inline-flex;
+  background:rgba(255,255,255,.72);
+  color:var(--ink2);
+  font-family:var(--font-b);font-weight:600;
+  font-size:clamp(.65rem,1.32vh,.73rem);
+  letter-spacing:.01em;
+  padding:.36rem .72rem;
+  gap:.38rem;
+  border:1px solid var(--line);
+  border-radius:999px;
+  box-shadow:0 2px 8px rgba(17,32,26,.05);
+  opacity:.9;
+  transition:opacity .2s ease, border-color .2s ease, box-shadow .2s ease, transform .18s ease;
+}
+.cta-alt::after{display:none}
+.cta-alt:hover{
+  transform:translateY(-1px);opacity:1;
+  border-color:rgba(14,116,144,.32);
+  box-shadow:0 6px 14px rgba(17,32,26,.09);
+}
+.cta-alt .ico-mega{
+  width:1.05em;height:1.05em;flex:0 0 auto;opacity:.8;
+  fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;
+}
+.cta-alt b{
+  font-family:var(--font-b);font-weight:700;color:var(--ink);
+  background:none;-webkit-text-fill-color:currentColor;
+}
+.cta-alt small{font-weight:500;color:var(--muted);font-size:.94em}
+.fine{
+  margin:0;color:var(--muted);line-height:1.5;max-width:36ch;
+  font-size:clamp(.68rem,1.38vh,.78rem);
+}
+
+/* ---------- footer ---------- */
+.foot{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;flex:0 0 auto}
+.legal-links{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 6px;
+  font-size:clamp(.72rem,1.5vh,.82rem);font-weight:700;
+}
+.legal-links button{
+  font:inherit;font-weight:700;color:var(--em-d);background:none;border:0;padding:2px 1px;
+  cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;
+}
+.legal-links button:hover{color:var(--violet)}
+.sep{color:rgba(17,32,26,.28);font-weight:700}
+.risk{
+  margin:0;color:var(--muted);line-height:1.45;max-width:46ch;
+  font-size:clamp(.66rem,1.35vh,.74rem);
+}
+.copy{margin:0;color:#7C8C82;font-size:clamp(.64rem,1.3vh,.71rem)}
+
+/* ============================================================
+   MODALS — legal pages
+   ============================================================ */
+.modal{position:fixed;inset:0;z-index:120;display:flex;align-items:center;justify-content:center;padding:14px}
+.modal[hidden]{display:none}
+.modal-back{position:absolute;inset:0;background:rgba(17,32,26,.46);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);animation:fade .22s ease}
+.modal-card{
+  position:relative;width:100%;max-width:660px;max-height:88vh;max-height:88dvh;
+  background:#FFFDF8;border-radius:24px;border:1px solid var(--line);
+  box-shadow:0 30px 80px rgba(17,32,26,.3);
+  display:flex;flex-direction:column;overflow:hidden;
+  animation:pop .26s cubic-bezier(.2,.8,.3,1);
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+.modal-head{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 16px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#FFFCF4,#FFF8EC);
+}
+.modal-head h2{margin:0;font-family:var(--font-h);font-size:1.02rem;color:var(--ink);letter-spacing:-.01em}
+.modal-head small{display:block;font-size:.68rem;color:var(--muted);font-weight:600}
+.x{
+  flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
+  background:#fff;color:var(--ink2);font-size:1rem;font-weight:700;cursor:pointer;line-height:1;
+}
+.x:hover{background:#F5F6F5;color:var(--rose)}
+.modal-body{
+  padding:16px 18px 20px;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  font-size:.9rem;color:var(--ink2);
+}
+.modal-body h3{
+  font-family:var(--font-h);color:var(--ink);font-size:.95rem;font-weight:700;margin:1.15rem 0 .35rem;letter-spacing:-.01em;
+}
+.modal-body h3:first-child{margin-top:0}
+.modal-body p{margin:0 0 .7rem}
+.modal-body ul{margin:0 0 .8rem;padding:0;list-style:none;display:grid;gap:.35rem}
+.modal-body ul li{padding-left:1rem;position:relative}
+.modal-body ul li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--em);opacity:.65}
+.modal-note{
+  background:#F5FCF8;border-left:3px solid var(--em);border-radius:0 12px 12px 0;
+  padding:.7rem .85rem;margin:.9rem 0;font-size:.85rem;
+}
+.modal-note.warn{background:#FFFCF1;border-left-color:var(--gold)}
+.modal-foot{
+  display:flex;gap:8px;justify-content:flex-end;align-items:center;flex-wrap:wrap;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:#FFFCF4;
+}
+.mbtn{
+  font-family:var(--font-h);font-weight:700;font-size:.85rem;padding:.6rem 1.05rem;border-radius:999px;
+  border:1px solid var(--line);background:#fff;color:var(--ink2);cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;gap:.4rem;
+}
+.mbtn:hover{background:#F6F7F6}
+.mbtn.join{background:linear-gradient(135deg,#0E9F6E,#0E7490);color:#fff;border-color:transparent;box-shadow:0 10px 22px rgba(14,159,110,.28)}
+.mbtn.join:hover{transform:translateY(-1px)}
+.contact-cards{display:grid;gap:10px;grid-template-columns:1fr}
+@media (min-width:560px){.contact-cards{grid-template-columns:1fr 1fr}}
+.ccard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.85rem 1rem}
+.ccard b{display:block;font-family:var(--font-h);color:var(--ink);font-size:.9rem;margin-bottom:.15rem}
+.ccard p{margin:0;font-size:.85rem}
+.mono-sm{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;word-break:break-all}
+
+/* ---------- fit tweaks for short screens ---------- */
+@media (max-height:820px){
+  .chips{display:none}
+}
+@media (max-height:760px){
+  .badges{display:none}
+  .avatar-wrap{width:clamp(70px,14vh,96px)}
+  .sub{font-size:clamp(.76rem,1.62vh,.92rem)}
+}
+@media (max-height:690px){
+  /* chhoti screens: extra line hide, taake ek hi screen mein sab fit rahe
+     (compliance text footer mein maujood rehta hai) */
+  .fine{display:none}
+}
+@media (max-height:600px){
+  .fine{font-size:.68rem}
+  h1.headline{font-size:clamp(1rem,2.9vh,1.32rem)}
+  .avatar-wrap{width:clamp(62px,13vh,82px)}
+  .cta{font-size:1rem;padding:.78rem 1.1rem;min-height:48px}
+}
+@media (max-height:470px){
+  .fine{display:none}
+  h1.headline{font-size:1.02rem}
+  .sub{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+}
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<main class="screen" id="main">
+
+  <!-- ===== TOP BAR ===== -->
+  <header class="topbar">
+    <span class="brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0E9F6E"/><stop offset="100%" stop-color="#0E7490"/></linearGradient></defs>
+        <rect width="64" height="64" rx="18" fill="url(#lg)"/>
+        <path d="M14 42l11-13 8 8 17-21" fill="none" stroke="#FFD86B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <b data-cfg="channelName">HAJI MEMON SALMAN TRADER</b>
+    </span>
+    <span class="pill-18">Free Community · 18+</span>
+  </header>
+
+  <!-- ===== CENTER STAGE ===== -->
+  <section class="stage">
+
+    <!-- Profile -->
+    <div class="avatar-wrap">
+      <div class="ring" id="ring">
+        <div class="ring-inner">
+          <img id="avatar" src="https://i.ibb.co/9HZyJ6Tx/Whats-App-Image-2026-10-04-at-11-00-43-PM.jpg" alt="HAJI MEMON SALMAN TRADER - community profile"
+               referrerpolicy="no-referrer" decoding="async" fetchpriority="high"
+               onerror="this.style.display='none'" />
+          <span class="mono" id="mono" aria-hidden="true">HM</span>
+        </div>
+      </div>
+      <span class="verified" title="Community administrator">ADMIN</span>
+    </div>
+
+    <p class="brandname" data-cfg="channelName">HAJI MEMON SALMAN TRADER</p>
+    <p class="handle" id="handle">Free Educational Community</p>
+
+    <div class="badges">
+      <span class="badge">🎓 Learning only</span>
+      <span class="badge">🌐 Urdu + English</span>
+      <span class="badge">🆓 100% Free</span>
+    </div>
+
+    <h1 class="headline">
+      Market Ki Samajh Banayein — <span class="grad">Apni Zubaan Mein</span>, Bilkul <span class="grad2">Free</span>.
+    </h1>
+
+    <p class="sub">
+      Beginner-friendly <b>learning community</b> — market basics, financial awareness aur discipline ke liye.
+      Bilkul free · sirf seekhne ke liye · koi shart nahi.
+    </p>
+
+    <div class="chips">
+      <span class="chip">📊 Market Basics</span>
+      <span class="chip">🛡️ Risk Awareness</span>
+      <span class="chip">🧠 Discipline &amp; Patience</span>
+    </div>
+
+    <a class="cta" id="joinBtn" href="https://t.me/YourChannelUsername" data-cfg-href="telegramUrl" rel="noopener nofollow" target="_blank">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 19 19.2c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.5.4-.9.4l.3-4.5 8.3-7.5c.4-.3-.1-.5-.6-.2L7.6 12.3l-4.4-1.4c-.9-.3-.9-.9.2-1.3l17-6.6c.8-.3 1.5.2 1.5 1.3z"/></svg>
+      Join Free Telegram Channel
+    </a>
+
+    <a class="cta cta-alt" id="agencyBtn"
+       href="https://t.me/+w2ZGydaYo6tiMzdl"
+       target="_blank" rel="noopener nofollow"
+       aria-label="Contact Adstele Agency on Telegram — advertising and promotion enquiries only">
+      <svg class="ico-mega" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V5L6 9H4a1 1 0 0 0-1 1z"/>
+        <path d="M15.5 8.5a5 5 0 0 1 0 7"/>
+        <path d="M18.5 5.5a9 9 0 0 1 0 13"/>
+      </svg>
+      <span>Advertising by <b>Adstele Agency</b></span>
+    </a>
+
+    <p class="fine">
+      Educational purpose only · Learning community · No advice, no promises · Join ya leave anytime
+    </p>
+  </section>
+
+  <!-- ===== FOOTER / LEGAL POPUPS ===== -->
+  <footer class="foot">
+    <nav class="legal-links" aria-label="Legal and policy pages">
+      <button type="button" data-open="privacy">Privacy Policy</button><span class="sep">·</span>
+      <button type="button" data-open="terms">Terms &amp; Conditions</button><span class="sep">·</span>
+      <button type="button" data-open="disclaimer">Disclaimer</button><span class="sep">·</span>
+      <button type="button" data-open="contact">Contact &amp; Grievance</button>
+    </nav>
+    <p class="risk">
+      Educational content only — not financial advice. Markets can go up or down, so always learn before you decide.
+      Not affiliated with, endorsed by or sponsored by Meta Platforms or Telegram. 18+ only.
+    </p>
+    <p class="copy">© <span id="yr">2026</span> <span data-cfg="channelName">HAJI MEMON SALMAN TRADER</span> · All rights reserved</p>
+  </footer>
+</main>
+
+<!-- ============ MODAL: PRIVACY POLICY ============ -->
+<div class="modal" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="mt-privacy" hidden>
+  <div class="modal-back" data-close></div>
+  <div class="modal-card">
+    <div class="modal-head">
+      <div><h2 id="mt-privacy">Privacy Policy</h2><small>Last updated: <span data-cfg="updated">4 October 2026</span></small></div>
+      <button class="x" type="button" data-close aria-label="Close privacy policy">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-note"><b>In short:</b> we collect only what you choose to share, we use it solely to send you free educational updates, we never sell your personal data, and you may ask us to erase it at any time.</div>
+
+      <h3>1. Who we are</h3>
+      <p>This website, together with the free Telegram community operated under the name <b data-cfg="channelName">HAJI MEMON SALMAN TRADER</b> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;), provides <b>free educational content</b> concerning market basics, financial awareness and discipline. We are not a broker, exchange, investment adviser, financial institution or licensed firm of any kind.</p>
+      <p>Where UK or EU data protection law applies, we act as the <b>data controller</b> in respect of your personal data.</p>
+
+      <h3>2. Personal data you give us</h3>
+      <ul>
+        <li>Your name, email address and telephone or WhatsApp number &mdash; where you complete a form on this page or a Meta (Facebook/Instagram) lead form.</li>
+        <li>Your message or enquiry to us.</li>
+        <li>Preferences you choose to share, such as your preferred language (English or Roman Urdu) or your level of experience.</li>
+      </ul>
+
+      <h3>3. Personal data collected automatically</h3>
+      <ul>
+        <li>Device and browser details, operating system, language and approximate location (country or city level only).</li>
+        <li>Usage data, such as pages viewed, the referring link and button clicks &mdash; for example, whether the &ldquo;Join Free&rdquo; button was pressed.</li>
+        <li>Technical logs, including your IP address, recorded by our hosting provider for security and spam prevention purposes.</li>
+      </ul>
+
+      <h3>4. What we never ask for</h3>
+      <p>We never ask for, and strongly advise you never to share: bank account or card details, national identity documents, brokerage passwords, wallet recovery phrases, one-time passcodes (OTPs) or any payment whatsoever. Our community is provided <b>free of charge</b>, and no person is authorised to request money on our behalf.</p>
+
+      <h3>5. How we use your personal data</h3>
+      <ul>
+        <li>To send you free educational updates and community announcements, but only where you have opted in.</li>
+        <li>To answer your enquiries and to provide learning support.</li>
+        <li>To understand which content is useful, so that we may improve this page and our lessons.</li>
+        <li>To measure the performance of our advertising in an aggregated, privacy-respecting manner.</li>
+        <li>To keep the community safe from spam, fraud and impersonation.</li>
+        <li>To comply with applicable law and to respond to lawful requests.</li>
+      </ul>
+      <p><b>We do not sell, rent or trade your personal data to anyone.</b></p>
+
+      <h3>6. Lawful basis for processing</h3>
+      <p>Where data protection law requires a lawful basis, we rely upon: <b>your consent</b> (forms, updates and cookies); our <b>legitimate interests</b> (keeping this page secure, functional and free from spam, and improving our educational content); and <b>compliance with our legal obligations</b>.</p>
+
+      <h3>7. Cookies and similar technologies</h3>
+      <p>We use essential cookies or local storage in order to remember your preferences and to keep this page working, together with analytics and measurement technologies that help us to understand how the page is used.</p>
+      <p>Where you arrive from a Meta advertisement, measurement tools may record anonymous events such as a page view or a button click. You may block or delete cookies through your browser settings at any time; doing so will not prevent you from joining the free community.</p>
+      <p>To control how Meta uses your data for advertising purposes, please visit Meta&rsquo;s Ad Preferences and Privacy Center.</p>
+
+      <h3>8. Meta and Facebook lead data</h3>
+      <p>Where you complete a lead form on Facebook or Instagram, Meta shares the information you entered with us. We use it <b>solely</b> to send you the free community link and educational updates. It is never sold, rented or used for unrelated marketing purposes. This page and community are <b>not part of, endorsed by, or affiliated with Meta Platforms, Inc.</b>, and Meta processes data independently under its own policies.</p>
+
+      <h3>9. Sharing and disclosure</h3>
+      <ul>
+        <li><b>Service providers</b> &mdash; trusted hosting, email and analytics providers who process data on our instructions and under confidentiality obligations.</li>
+        <li><b>Legal requirements</b> &mdash; where we are required to do so by law or by valid legal process, or in order to protect the safety and rights of our members.</li>
+      </ul>
+      <p>We do not share your personal data with other members, advertisers or data brokers.</p>
+
+      <h3>10. How long we keep personal data</h3>
+      <p>We retain personal data only for as long as it is needed. In practice, this means for as long as you remain subscribed to our updates, or for up to 24 months of inactivity. Server logs are retained for a short period for security purposes. Once data is no longer required, it is erased or anonymised.</p>
+
+      <h3>11. Your rights</h3>
+      <p>Subject to applicable law, you have the right to:</p>
+      <ul>
+        <li>access the personal data we hold about you;</li>
+        <li>request rectification of inaccurate or incomplete data;</li>
+        <li>request erasure of your data, or withdraw your consent;</li>
+        <li>object to, or request restriction of, certain processing;</li>
+        <li>opt out of marketing messages at any time;</li>
+        <li>request a portable copy of your data;</li>
+        <li>lodge a complaint with your local supervisory authority &mdash; in the United Kingdom, the Information Commissioner&rsquo;s Office (ICO).</li>
+      </ul>
+      <p>To exercise any of these rights, please email <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a> . We will respond within one month, and we will never charge a fee for doing so.</p>
+
+      <h3>12. Security</h3>
+      <p>We apply appropriate technical and organisational measures, including HTTPS encryption, restricted access to personal data and data minimisation. Nevertheless, no method of transmission or storage over the internet is completely secure, and we cannot guarantee absolute security. Please assist us by never sharing passwords or one-time passcodes with anyone.</p>
+
+      <h3>13. Children&rsquo;s privacy</h3>
+      <p>This page and community are intended for persons aged <b>18 and over</b>, and are not directed at children. We do not knowingly collect personal data from children. If you believe that a child has provided us with personal data, please contact us and we will erase it promptly.</p>
+
+      <h3>14. International transfers</h3>
+      <p>Our service providers may store personal data on servers located in other countries. Where this occurs, we rely upon appropriate safeguards, such as standard contractual clauses and our providers&rsquo; own security and compliance commitments.</p>
+
+      <h3>15. Third-party links and platforms</h3>
+      <p>This page links to third-party platforms, including Telegram. We do not control those platforms and are not responsible for their privacy practices. We are not affiliated with, endorsed by or sponsored by Telegram Inc. We encourage you to read their privacy policies.</p>
+
+      <h3>16. Changes to this policy</h3>
+      <p>We may amend this policy from time to time. Any amendment will be published on this page together with a new &ldquo;Last updated&rdquo; date. Your continued use of the page following publication constitutes acceptance of the amended policy.</p>
+
+      <h3>17. Contact and complaints</h3>
+      <p>Data Protection Contact / Grievance Officer &mdash; <span data-cfg="channelName">HAJI MEMON SALMAN TRADER</span><br />
+      Email: <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a><br />
+      We aim to acknowledge every enquiry within 48 hours and to resolve it within one month.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="mbtn" type="button" data-close>Close</button>
+      <a class="mbtn join" data-cfg-href="telegramUrl" href="https://t.me/YourChannelUsername" target="_blank" rel="noopener nofollow">Join Free on Telegram</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: TERMS & CONDITIONS ============ -->
+<div class="modal" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="mt-terms" hidden>
+  <div class="modal-back" data-close></div>
+  <div class="modal-card">
+    <div class="modal-head">
+      <div><h2 id="mt-terms">Terms &amp; Conditions</h2><small>Last updated: <span data-cfg="updated">4 October 2026</span></small></div>
+      <button class="x" type="button" data-close aria-label="Close terms and conditions">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-note">This is a <b>free educational community</b>. We teach; we do not provide financial advice, buy or sell recommendations, or performance promises. Members must be <b>18 or over</b> and must never send money to any person claiming to represent us.</div>
+
+      <h3>1. Agreement to these Terms</h3>
+      <p>By using this website, submitting a form, or joining our free Telegram community operated under the name <b data-cfg="channelName">HAJI MEMON SALMAN TRADER</b> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;), you agree to be bound by these Terms. If you do not agree with them, please do not use this page or the community.</p>
+
+      <h3>2. What we provide</h3>
+      <p>We provide <b>free educational content only</b>, which may include:</p>
+      <ul>
+        <li>beginner-friendly lessons on market basics and terminology;</li>
+        <li>educational material concerning risk management, capital protection and market psychology;</li>
+        <li>general explanations of charts, patterns and terminology;</li>
+        <li>community announcements and occasional question-and-answer discussions.</li>
+      </ul>
+      <p>Content is shared in English and Roman Urdu. As it is provided free of charge, we may alter, suspend or withdraw any part of it at any time without notice.</p>
+
+      <h3>3. Eligibility (18+)</h3>
+      <p>You must be at least <b>18 years of age</b>, must be legally capable of entering into a binding agreement, and must not be prohibited by the laws applicable to you from receiving such content. This community is not intended for children, and we do not knowingly permit minors to participate.</p>
+
+      <h3>4. No financial advice</h3>
+      <p>All content is provided for <b>general information, learning and education only</b>. Nothing we share constitutes financial, tax or legal advice; a recommendation, endorsement or solicitation to buy or sell any security, currency, commodity, token or derivative; a personalised call or instruction; or an offer of any service requiring a licence.</p>
+      <ul>
+        <li>We do not provide buy or sell recommendations, market calls or portfolio management.</li>
+        <li>We make no promise and give no guarantee of any outcome or result.</li>
+        <li>We do not know your financial circumstances, and we are not your adviser or fiduciary.</li>
+        <li>We do not issue religious rulings. For any religious question, please consult a qualified scholar.</li>
+      </ul>
+      <p>Every decision you take in reliance upon what you learn is <b>your own responsibility</b>. You may lose money.</p>
+
+      <h3>5. Free community &mdash; no payments</h3>
+      <ul>
+        <li>Membership and all content are provided <b>free of charge</b>. There is no membership fee, course fee, subscription or hidden charge.</li>
+        <li>We will <b>never</b> request payment, bank or card details, one-time passcodes, passwords or wallet recovery phrases. Any person who does so is <b>not</b> us.</li>
+        <li>Where any person claims to represent us and demands money or login details, please stop, do not pay, and report it to us immediately.</li>
+      </ul>
+
+      <h3>6. Acceptable use</h3>
+      <p>When using this page or the community, you agree <b>not</b> to: post or send spam, advertisements, promotional or referral links, or chain messages; solicit money, funds or personal data from other members; impersonate us, our administrators or any other person; promote gambling or betting, lotteries, fraudulent loan applications or any unlawful, deceptive or harmful activity; harass, threaten, abuse, defame or discriminate against any person; publish hateful or obscene material; infringe the intellectual property, privacy or other rights of any person; attempt to hack, scrape, overload or disrupt this page or the community; or provide false or misleading information.</p>
+
+      <h3>7. Community rules and moderation</h3>
+      <p>We aim to maintain a respectful, family-friendly and scam-free environment. In order to protect members, we may remove any post or message that breaches these Terms, warn or remove members, and report suspected fraud to the relevant platform or authority. Participation is a privilege and not a right, and our moderation decisions are final &mdash; although you are always welcome to contact us and put your side of the matter.</p>
+
+      <h3>8. Intellectual property</h3>
+      <p>Our name, branding, layout and written educational material belong to us or are used with permission, and are protected by applicable intellectual property law. You may read, print and share our educational posts for <b>personal, non-commercial learning</b>, provided that our name and this notice remain attached. You may not copy, resell, rebrand, redistribute or republish our content as your own, or use it to promote or sell any course or paid service.</p>
+
+      <h3>9. Content you submit</h3>
+      <p>You are responsible for anything you post, send or submit, and you confirm that you own it or have permission to share it, and that it infringes no person&rsquo;s rights. By sending us a question, you grant us permission to answer it publicly in a general, educational manner. Please do not post personal, financial or family information concerning yourself or others.</p>
+
+      <h3>10. Third-party platforms</h3>
+      <p>Our community is hosted on <b>Telegram</b>, and we may advertise through <b>Meta</b> (Facebook/Instagram). The terms and policies of those platforms apply to your use of them. <b>We are not affiliated with, sponsored by, endorsed by or administered by Meta Platforms, Inc., Telegram Inc., or any broker or exchange.</b></p>
+
+      <h3>11. Disclaimer of warranties</h3>
+      <p>This page and the community are provided on an <b>&ldquo;as is&rdquo;</b> and <b>&ldquo;as available&rdquo;</b> basis. To the fullest extent permitted by law, we exclude all warranties, conditions and terms, whether express or implied, including any implied terms as to satisfactory quality, fitness for a particular purpose, accuracy or non-infringement. We do not warrant that the page will be uninterrupted, error-free or secure, or that any content is complete, accurate or up to date.</p>
+
+      <h3>12. Limitation of liability</h3>
+      <p>To the fullest extent permitted by law, we, our administrators and our volunteers shall <b>not</b> be liable for any indirect, incidental, special, consequential or punitive loss or damage, nor for any market-related losses, loss of data or loss of opportunity, arising out of or in connection with:</p>
+      <ul>
+        <li>your use of, or inability to use, this page or the community;</li>
+        <li>any market, money or financial decision you take, including any loss you incur;</li>
+        <li>the conduct of any third party or impostor, whether online or offline;</li>
+        <li>any unauthorised access to, or alteration of, your transmissions or content.</li>
+      </ul>
+      <p>As the community is provided <b>free of charge</b>, our total aggregate liability to you in respect of any claim shall not exceed <b>zero</b> &mdash; being the amount you have paid to us. Nothing in these Terms excludes or limits our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, or for any other liability which cannot lawfully be excluded or limited.</p>
+
+      <h3>13. Indemnity</h3>
+      <p>You agree to indemnify and hold harmless us, our administrators and our volunteers against any claims, damages, liabilities, losses and costs (including reasonable legal fees) arising from your breach of these Terms, your misuse of this page or the community, your content, or your breach of any law or third-party right.</p>
+
+      <h3>14. Leaving and termination</h3>
+      <ul>
+        <li>You may leave the community at any time by selecting &ldquo;Leave Channel&rdquo; in Telegram. No reason is required, and no fee is payable.</li>
+        <li>We may suspend or remove access where these Terms are breached, or in order to protect the safety and security of our members.</li>
+        <li>You may also ask us to erase your personal data &mdash; please see our Privacy Policy.</li>
+      </ul>
+
+      <h3>15. Governing law and jurisdiction</h3>
+      <p>These Terms, and any dispute or claim arising out of or in connection with them, shall be governed by the laws of the jurisdiction in which we operate. Please contact us first, so that we may attempt to resolve any dispute amicably and in good faith before either party commences proceedings. Nothing in this clause affects any mandatory rights you may have under the consumer law of your country of residence.</p>
+
+      <h3>16. Changes to these Terms</h3>
+      <p>We may amend these Terms from time to time. Any amendment will be published on this page together with a new &ldquo;Last updated&rdquo; date, and material changes will be highlighted. Your continued use of the page or community following publication constitutes acceptance of the amended Terms. If you do not agree with them, please stop using the page and leave the community.</p>
+
+      <h3>17. Contact</h3>
+      <p>For any question concerning these Terms, please contact: <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a></p>
+      <p>By joining our Telegram community, you confirm that you are <b>18 or over</b>, that you understand this to be an <b>educational community</b>, and that you accept that <b>markets carry risk and that no outcome is guaranteed</b>.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="mbtn" type="button" data-close>Close</button>
+      <a class="mbtn join" data-cfg-href="telegramUrl" href="https://t.me/YourChannelUsername" target="_blank" rel="noopener nofollow">Join Free on Telegram</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: DISCLAIMER ============ -->
+<div class="modal" id="modal-disclaimer" role="dialog" aria-modal="true" aria-labelledby="mt-disclaimer" hidden>
+  <div class="modal-back" data-close></div>
+  <div class="modal-card">
+    <div class="modal-head">
+      <div><h2 id="mt-disclaimer">Disclaimer</h2><small>Last updated: <span data-cfg="updated">4 October 2026</span></small></div>
+      <button class="x" type="button" data-close aria-label="Close disclaimer">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-note warn"><b>Please read this first:</b> everything we share is provided for <b>learning and education only</b>. It is not financial advice. We do not provide buy or sell recommendations, and we do not guarantee any outcome. Markets carry a real risk of losing money.</div>
+
+      <h3>1. Educational purpose only</h3>
+      <p><b data-cfg="channelName">HAJI MEMON SALMAN TRADER</b> is a <b>free educational community</b> that helps beginners to understand general concepts of markets, risk awareness and discipline. We are a study group &mdash; not a broker, exchange, fund, research house, advisory firm or employer. We do not sell courses, subscriptions, software, recommendations or mentorship packages, and any person who sells such things in our name is not us.</p>
+
+      <h3>2. No financial advice</h3>
+      <p>Nothing on this page, in our Telegram community, or in any message, image or video that we publish constitutes financial, tax or legal advice; a recommendation, endorsement or solicitation to buy or sell any financial product; a personalised call based upon your circumstances; or an offer of any service requiring a licence. We do not know your financial circumstances, and we are not your adviser.</p>
+
+      <h3>3. Risk warning</h3>
+      <ul>
+        <li>You may lose some or all of your capital. With leveraged or derivative products, you may lose more than you deposit.</li>
+        <li>Past performance, charts and worked examples are never a reliable indicator of future results.</li>
+        <li>Markets may move against you quickly, owing to news, volatility, liquidity gaps or technical failures.</li>
+        <li>Never risk money that you cannot genuinely afford to lose, and never borrow money in order to trade.</li>
+        <li>Any person who promises a certain outcome, or tells you there is no risk, is giving you a warning sign.</li>
+      </ul>
+      <p>If markets are affecting your finances, sleep, studies, work or family life, please stop and seek support.</p>
+
+      <h3>4. No guarantee of results</h3>
+      <p>We make no promise and give no guarantee of accuracy or any particular outcome. Learning about markets improves understanding; it does not remove risk. Any person who claims otherwise is misleading you, and we ask you to report them to us.</p>
+
+      <h3>5. No affiliation or endorsement</h3>
+      <p>This page and community are <b>not affiliated with, authorised by, endorsed by or sponsored by</b>: Meta Platforms, Inc. (Facebook, Instagram, WhatsApp) &mdash; we may simply advertise upon those platforms; Telegram Inc. &mdash; we simply host our free channel there; any broker, exchange, bank, prop firm or payment processor; or any religious institution, mosque or scholar. All trademarks belong to their respective owners and are referred to for identification purposes only.</p>
+
+      <h3>6. Third-party content</h3>
+      <p>We may share links to free, publicly available resources, or mention third-party platforms for learning purposes. We do not control those websites and are not responsible for their content, accuracy, security, terms, prices or practices. A link is <b>not</b> an endorsement, and we encourage you to verify information from official sources.</p>
+
+      <h3>7. Testimonials and examples</h3>
+      <p>Where a member&rsquo;s comment or a chart example is shown, it is illustrative only. It does not represent a typical outcome, and it is not a promise that you will achieve a similar or any result. Charts, back-tests and historical examples are teaching tools, not forecasts.</p>
+
+      <h3>8. Your responsibility</h3>
+      <p>You are solely responsible for your own decisions, trades and their outcomes; for verifying any information before relying upon it; and for complying with the laws and tax rules applicable to you. We are not responsible for losses caused by your use of our educational content, or by the actions of any third party or impostor.</p>
+
+      <h3>9. Religious note</h3>
+      <p>Our content is prepared with Muslim learners in mind and is written in a respectful and ethical manner. <b>Everyone is welcome here, whatever their background or beliefs.</b> We do not promote gambling or betting, lotteries, interest-based lending or deceptive financial schemes.</p>
+      <p>However, <b>we do not issue religious rulings or fatwas</b>, and we do not declare any particular market product to be halal or haram. Interpretations differ between scholars and schools of thought. For any religious question concerning a financial matter, please consult a qualified scholar whom you trust. Our role is educational only.</p>
+
+      <h3>10. Age restriction</h3>
+      <p>This page and community are intended for adults aged <b>18 or over</b>, and are not designed for children. Parents and guardians are requested to supervise internet use within the home.</p>
+
+      <h3>11. Contact</h3>
+      <p>Have you found something misleading, or something claiming to be us? Please report it, as it helps to protect everyone: <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a></p>
+      <p><b>In summary:</b> we teach for free, we are honest about risk, and we make no promises at all. What you do with what you learn is your decision and your responsibility.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="mbtn" type="button" data-close>Close</button>
+      <a class="mbtn join" data-cfg-href="telegramUrl" href="https://t.me/YourChannelUsername" target="_blank" rel="noopener nofollow">Join Free on Telegram</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: CONTACT & GRIEVANCE ============ -->
+<div class="modal" id="modal-contact" role="dialog" aria-modal="true" aria-labelledby="mt-contact" hidden>
+  <div class="modal-back" data-close></div>
+  <div class="modal-card">
+    <div class="modal-head">
+      <div><h2 id="mt-contact">Contact &amp; Grievance</h2><small>We usually reply within 1–2 working days</small></div>
+      <button class="x" type="button" data-close aria-label="Close contact information">✕</button>
+    </div>
+    <div class="modal-body">
+      <h3>How can we help?</h3>
+      <div class="contact-cards">
+        <div class="ccard">
+          <b>📚 Learning enquiries</b>
+          <p>The best place to raise a learning query is the Telegram community &mdash; please post your question there.</p>
+        </div>
+        <div class="ccard">
+          <b>✉️ General and legal enquiries</b>
+          <p class="mono-sm"><a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a></p>
+        </div>
+        <div class="ccard">
+          <b>🔒 Privacy and data requests</b>
+          <p>Ask us to access, rectify or erase your personal data. We respond within one month, and usually far sooner.</p>
+        </div>
+        <div class="ccard">
+          <b>🚨 Reporting impersonation or fraud</b>
+          <p>If any person demands money, one-time passcodes or passwords in our name, please report it to us immediately, with screenshots where possible.</p>
+        </div>
+      </div>
+
+      <h3>Grievance officer / nodal contact</h3>
+      <ul>
+        <li><b>Designation:</b> Community Administrator &mdash; <span data-cfg="channelName">HAJI MEMON SALMAN TRADER</span></li>
+        <li><b>Email:</b> <a data-cfg-href="mailtoUrl" href="mailto:contact@hajimemonsalmantrader.com"><span data-cfg="contactEmail">contact@hajimemonsalmantrader.com</span></a></li>
+        <li><b>Acknowledgement:</b> within 48 hours</li>
+        <li><b>Resolution:</b> attempted within 15 working days</li>
+      </ul>
+
+      <h3>Safety notice</h3>
+      <div class="modal-note warn">
+        Our community is provided <b>free of charge</b>. We will never ask you for money, bank details, one-time passcodes or passwords.
+        Only the Telegram link published on this page is official. If you are unsure, please email us first.
+      </div>
+
+      <h3>Important</h3>
+      <p>This page is provided for <b>education only</b>. It is neither part of, nor endorsed by, Meta Platforms or Telegram. We do not provide financial advice, and no outcome is guaranteed. Intended for persons aged 18 and over.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="mbtn" type="button" data-close>Close</button>
+      <a class="mbtn join" data-cfg-href="telegramUrl" href="https://t.me/YourChannelUsername" target="_blank" rel="noopener nofollow">Join Free on Telegram</a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   ⚙️  CONFIG — SIRF YEH 5 LINES BADLEIN
+   ============================================================ */
+var CONFIG = {
+  channelName:     "HAJI MEMON SALMAN TRADER",
+
+  // 🔴 1) Apna Telegram channel link yahan lagayein:
+  telegramUrl:     "https://t.me/YourChannelUsername",
+
+  // 🔴 2) Contact email (Privacy / Contact mein dikhta hai):
+  contactEmail:    "contact@hajimemonsalmantrader.com",
+
+  // 🖼️ 3) Profile image link yahan paste karein (imgbb / GitHub raw link).
+  //       Khali chhodein to gradient monogram (HM) dikhega. Example:
+  //       "https://i.ibb.co/xxxxxxx/memon-bhai.jpg"
+  profileImageUrl: "https://i.ibb.co/9HZyJ6Tx/Whats-App-Image-2026-10-04-at-11-00-43-PM.jpg",
+
+  // 📊 4) Meta (Facebook) Pixel ID — sirf number, e.g. "1234567890123456" (khali = off)
+  metaPixelId:     "",
+
+  // 📅 5) Aakhri update ki date (policies mein dikhti hai)
+  updated:         "4 October 2026",
+
+  // 🔗 6) Agar aap privacy-policy.html, terms-conditions.html, disclaimer.html aur
+  //       contact.html bhi upload kar rahe hain, to isko true kar dein — popups ke
+  //       andar "Open full page" link aa jayega (Meta reviewer ke liye useful).
+  //       Sirf index.html upload kar rahe hain? To false hi rakhein.
+  standalonePages: false
+};
+
+(function () {
+  "use strict";
+  var $  = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var PLACEHOLDER = /YourChannelUsername/i;
+
+  /* ---------- 1. Config injection ---------- */
+  function applyConfig() {
+    $$("[data-cfg]").forEach(function (el) {
+      var key = el.getAttribute("data-cfg");
+      if (CONFIG[key] != null && CONFIG[key] !== "") el.textContent = CONFIG[key];
+    });
+    $$("[data-cfg-href]").forEach(function (el) {
+      var key = el.getAttribute("data-cfg-href");
+      if (key === "mailtoUrl") el.setAttribute("href", "mailto:" + CONFIG.contactEmail);
+      else if (CONFIG[key]) { el.setAttribute("href", CONFIG[key]); el.setAttribute("target", "_blank"); el.setAttribute("rel", "noopener nofollow"); }
+    });
+
+    // handle: telegram link se @username nikal kar dikhayein
+    var h = $("#handle");
+    if (h) {
+      var m = /t\.me\/([A-Za-z0-9_]+)/.exec(CONFIG.telegramUrl || "");
+      h.textContent = (m && !PLACEHOLDER.test(CONFIG.telegramUrl))
+        ? "@" + m[1] + " · Free Educational Community"
+        : "Free Educational Community · Learning only";
+    }
+
+    // monogram: channel name ke pehle 2 lafzon se initials
+    var mono = $("#mono");
+    if (mono) {
+      var w = CONFIG.channelName.trim().split(/\s+/);
+      mono.textContent = (w[0][0] + (w[1] ? w[1][0] : "")).toUpperCase();
+    }
+
+    var y = $("#yr"); if (y) y.textContent = new Date().getFullYear();
+
+    // profile photo: HTML mein already laga hua hai; config se badla ho to sync karein
+    var img = $("#avatar");
+    if (img) {
+      if (CONFIG.profileImageUrl && img.getAttribute("src") !== CONFIG.profileImageUrl) {
+        img.style.display = "";
+        img.setAttribute("src", CONFIG.profileImageUrl);
+      }
+      img.addEventListener("error", function () { img.style.display = "none"; });
+    }
+
+    // JSON-LD (structured data) ko bhi config se sync karein
+    var ld = document.querySelector('script[type="application/ld+json"]');
+    if (ld && CONFIG.telegramUrl && !PLACEHOLDER.test(CONFIG.telegramUrl)) {
+      ld.textContent = ld.textContent.replace(/https:\/\/t\.me\/[A-Za-z0-9_]+/g, CONFIG.telegramUrl);
+    }
+
+    if (PLACEHOLDER.test(CONFIG.telegramUrl)) {
+      console.warn("[Setup needed] CONFIG.telegramUrl mein apna Telegram link lagayein (index.html ke <script> mein).");
+    }
+  }
+
+  /* ---------- 2. Meta Pixel + Lead tracking ---------- */
+  function loadPixel() {
+    if (!CONFIG.metaPixelId || window.fbq) return;
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = [];
+      t = b.createElement(e); t.async = !0; t.src = v;
+      s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    window.fbq("init", CONFIG.metaPixelId);
+    window.fbq("track", "PageView");
+  }
+
+  function setupLeadTracking() {
+    document.addEventListener("click", function (ev) {
+      if (!ev.target.closest) return;
+      // main CTA -> Lead (ads optimization isi par chalti hai)
+      if (ev.target.closest("[data-cfg-href='telegramUrl']")) {
+        if (typeof window.fbq === "function") window.fbq("track", "Lead", { content_name: "Telegram Join" });
+        return;
+      }
+      // agency button -> alag custom event, taake Lead data ganda na ho
+      if (ev.target.closest("#agencyBtn")) {
+        if (typeof window.fbq === "function") window.fbq("trackCustom", "AgencyClick", { content_name: "Adstele Agency" });
+      }
+    });
+  }
+
+  /* ---------- 3. Legal modals ---------- */
+  var lastFocus = null;
+  var PAGE_OF = {
+    privacy:    "privacy-policy.html",
+    terms:      "terms-conditions.html",
+    disclaimer: "disclaimer.html",
+    contact:    "contact.html"
+  };
+
+  function addStandaloneLinks() {
+    if (!CONFIG.standalonePages) return;
+    Object.keys(PAGE_OF).forEach(function (key) {
+      var m = document.getElementById("modal-" + key);
+      var foot = m && m.querySelector(".modal-foot");
+      if (!foot) return;
+      var a = document.createElement("a");
+      a.className = "mbtn";
+      a.href = PAGE_OF[key];
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = "Open full page ↗";
+      foot.insertBefore(a, foot.firstChild);
+    });
+  }
+
+  function openModal(id) {
+    var m = document.getElementById("modal-" + id);
+    if (!m) return;
+    lastFocus = document.activeElement;
+    m.hidden = false;
+    document.documentElement.style.overflow = "hidden"; document.body.style.overflow = "hidden";
+    var x = $(".x", m); if (x) x.focus();
+  }
+
+  function closeModal(m) {
+    m.hidden = true;
+    document.documentElement.style.overflow = ""; document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  function setupModals() {
+    $$("[data-open]").forEach(function (btn) {
+      btn.addEventListener("click", function () { openModal(btn.getAttribute("data-open")); });
+    });
+    $$(".modal").forEach(function (m) {
+      m.addEventListener("click", function (ev) {
+        if (ev.target.closest && ev.target.closest("[data-close]")) closeModal(m);
+      });
+    });
+    document.addEventListener("keydown", function (ev) {
+      var open = $$(".modal").filter(function (m) { return !m.hidden; })[0];
+      if (!open) return;
+      if (ev.key === "Escape") { closeModal(open); return; }
+      if (ev.key !== "Tab") return;
+      // focus trap — keyboard focus modal ke andar hi rahe
+      var f = $$('a[href], button:not([disabled]), input, select, textarea', open)
+        .filter(function (el) { return el.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (ev.shiftKey && document.activeElement === first) { ev.preventDefault(); last.focus(); }
+      else if (!ev.shiftKey && document.activeElement === last) { ev.preventDefault(); first.focus(); }
+    });
+  }
+
+  /* ---------- init ---------- */
+  function init() {
+    applyConfig();
+    loadPixel();
+    setupLeadTracking();
+    setupModals();
+    addStandaloneLinks();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"HAJI MEMON SALMAN TRADER",
+"description":"Free educational Telegram community for market basics, financial awareness and discipline. Educational purpose only.",
+"sameAs":["https://t.me/YourChannelUsername"],
+"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"contact@hajimemonsalmantrader.com","availableLanguage":["English","Urdu","Hindi"]}}
+</script>
+</body>
+</html>

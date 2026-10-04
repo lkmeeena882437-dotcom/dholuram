@@ -1,0 +1,17 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Logs & local env
+*.log
+.env
+.env.local
+
+# Build / deps (agar aage tooling add karein)
+node_modules/
+dist/
+build/
+.cache/
